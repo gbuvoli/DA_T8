@@ -4,4 +4,4 @@
 format: jb-book
 root: intro
 chapters:
-- file: sp0_postonboarding
+- file: sp0_postonboarding.ipynb
