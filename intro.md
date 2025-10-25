@@ -2,6 +2,5 @@
 
 Aquí estaremos publicando el contenido de las clases.
 
-
 ```{tableofcontents}
 ```

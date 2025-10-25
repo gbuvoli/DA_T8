@@ -1,0 +1,924 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sprint 1 - Webinar 1: Introduction to Your Future Profession &#8212; Bootcamp Classes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sp1_teo';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Bienvenidos al mundo de la Analítica de Datos" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/t10logo.png" class="logo__image only-light" alt="Bootcamp Classes - Home"/>
+    <script>document.write(`<img src="_static/t10logo.png" class="logo__image only-dark" alt="Bootcamp Classes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al mundo de la Analítica de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sprint 1 - Webinar 1: Introduction to Your Future Profession</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsp1_teo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/sp1_teo.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sprint 1 - Webinar 1: Introduction to Your Future Profession</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material">Material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-the-da">1) Role of the DA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-mundo-lleno-de-herramientas">2) Un mundo lleno de herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-en-diferentes-tipos-de-organizaciones">3) DA en diferentes tipos de organizaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-seniority">4) Tipos de Seniority</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-process-de-la-pregunta-a-la-entrega">5) Work Process (de la pregunta a la entrega)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-conceptual-al-caso-taylor-swift">6) Aplicación conceptual al caso Taylor Swift</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-practicos-en-google-sheets">8) Ejercicios prácticos en Google Sheets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-preparacion-del-archivo-1015-min">Ejercicio 1 — Preparación del archivo (10–15 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-estandarizar-fechas-y-booleanos-1520-min">Ejercicio 2 — Estandarizar fechas y booleanos (15–20 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3-numeros-y-separadores-1520-min">Ejercicio 3 — Números y separadores (15–20 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4-duplicados-y-separadores-de-texto-1015-min">Ejercicio 4 — Duplicados y separadores de texto (10–15 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5-metricas-y-visualizacion-1520-min">Ejercicio 5 — Métricas y visualización (15–20 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-6-handoff-y-checklist-510-min">Ejercicio 6 — Handoff y checklist (5–10 min)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rubrica-sugerida-evaluacion-formativa">Rúbrica sugerida (evaluación formativa)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siguientes-pasos">Siguientes Pasos</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sprint-1-webinar-1-introduction-to-your-future-profession">
+<h1>Sprint 1 - Webinar 1: Introduction to Your Future Profession<a class="headerlink" href="#sprint-1-webinar-1-introduction-to-your-future-profession" title="Link to this heading">#</a></h1>
+<p><strong>Clase teórica (sin ejecución de código).</strong><br />
+<strong>Fecha:</strong> 2025-08-18</p>
+<hr class="docutils" />
+<div style="text-align: center">
+    <img src="https://raw.githubusercontent.com/ljpiere/tpdata_python/main/images/w1s1_2.png" width="400">
+</div><section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
+<p>En esta sesión conocerás el <strong>rol del Data Analyst (DA)</strong>, su proceso de trabajo y cómo colabora con otros perfiles de datos para generar valor de negocio. Usaremos el archivo <strong><code class="docutils literal notranslate"><span class="pre">taylor_swift_da_intro.xlsx</span></code></strong> como hilo conductor para aterrizar conceptos (no trabajaremos dentro del notebook; la práctica será en Excel/Google Sheets).</p>
+<p><strong>¿Por qué este caso?</strong></p>
+<ul class="simple">
+<li><p>Conecta con cultura pop (Taylor Swift) y métricas de streaming/videos.</p></li>
+<li><p>El archivo contiene <strong>problemas de calidad</strong> realistas (fechas mixtas, booleanos variados, duplicados, números con símbolos), útiles para comprender el trabajo del DA.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="objetivos-de-aprendizaje">
+<h2>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar la sesión podrás:</p>
+<ol class="arabic simple">
+<li><p>Explicar qué hace un <strong>Data Analyst</strong> y y diferenciarlo de otros roles (DS, DE, BI, PM).</p></li>
+<li><p>Describir el <strong>proceso de trabajo</strong> del DA desde una pregunta de negocio hasta una entrega final.</p></li>
+<li><p>Identificar a los <strong>stakeholders clave</strong> y los <strong>entregables</strong> que se esperan de un DA.</p></li>
+<li><p>Reconocer <strong>niveles de seniority</strong> y las expectativas asociadas en la carrera de datos.</p></li>
+<li><p>Aplicar estos conceptos al <strong>caso de Taylor Swift</strong> utilizando el archivo como ejemplo teórico.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="material">
+<h2>Material<a class="headerlink" href="#material" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Táctica: Hands-on Together</p></li>
+<li><p>Adjunto: sp1_w1_taylor_swift_da_intro</p></li>
+<li><p>Kahoot: W1_Sprint1 (finalizando sesión)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="agenda">
+<h2>Agenda<a class="headerlink" href="#agenda" title="Link to this heading">#</a></h2>
+<p><strong>Bienvenida + Introducción</strong></p>
+<ul class="simple">
+<li><p>Rol del DA (qué hace y qué no hace)</p></li>
+<li><p>Principales roles en el mundo de datos y cómo colaboran</p></li>
+</ul>
+<p><strong>Revisión de teoría</strong></p>
+<ul class="simple">
+<li><p>Proceso de trabajo del DA (de la pregunta de negocio a la entrega)</p></li>
+<li><p>DA en distintos tipos de organizaciones</p></li>
+<li><p>Tipos de seniority y expectativas</p></li>
+</ul>
+<p><strong>Aplicación guiada</strong></p>
+<ul class="simple">
+<li><p>Caso conceptual de Taylor Swift: mapping de conceptos</p></li>
+<li><p>Preguntas dirigidas para comprobar comprensión</p></li>
+</ul>
+<p><strong>Cierre</strong></p>
+<ul class="simple">
+<li><p>Q&amp;A, repaso de aprendizajes y próximos pasos (Kahoot W1_Sprint1)</p></li>
+<li><p><strong>Ejercicios opcionales en Excel/Sheets</strong> (para practicar fuera del notebook)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="role-of-the-da">
+<h2>1) Role of the DA<a class="headerlink" href="#role-of-the-da" title="Link to this heading">#</a></h2>
+<p>El <strong>Data Analyst</strong> traduce <strong>preguntas de negocio</strong> en <strong>respuestas basadas en datos</strong> y <strong>entregables accionables</strong> (reportes, visualizaciones, checks de calidad, recomendaciones).</p>
+<p><strong>Responsabilidades nucleares:</strong></p>
+<ul class="simple">
+<li><p>Entender el contexto/objetivos del stakeholder y <strong>definir métricas</strong> relevantes.</p></li>
+<li><p><strong>Obtener</strong> datos de fuentes diversas (spreadsheets, CSVs, conectores).</p></li>
+<li><p><strong>Limpiar/preprocesar</strong> (tipos, duplicados, nulos, estandarización).</p></li>
+<li><p><strong>Explorar/calcular</strong> (resúmenes, segmentaciones, tendencias simples).</p></li>
+<li><p><strong>Comunicar</strong> con claridad (gráficos de barras/líneas, narrativa).</p></li>
+<li><p><strong>Documentar</strong> cambios y su racional (bitácora o <code class="docutils literal notranslate"><span class="pre">change_log</span></code>).</p></li>
+</ul>
+<p><strong>Límites típicos del DA (y cuándo escalar):</strong></p>
+<ul class="simple">
+<li><p>Modelos ML experimentales → DS/ML.</p></li>
+<li><p>Pipelines/infra de datos → DE.</p></li>
+<li><p>Modelado semántico/tableros escalables → BI/Analytics Engineer.</p></li>
+</ul>
+<p><strong>Caso Taylor Swift (en teoría):</strong></p>
+<ul class="simple">
+<li><p>Pregunta de negocio:</p></li>
+<li><p>Datos de partida: hojas <code class="docutils literal notranslate"><span class="pre">raw_songs</span></code>, <code class="docutils literal notranslate"><span class="pre">raw_albums</span></code> + <code class="docutils literal notranslate"><span class="pre">data_dictionary</span></code>.</p></li>
+<li><p>Entregables: resumen de métricas, top canciones, gráfico, notas de calidad.</p></li>
+</ul>
+<blockquote>
+<div><p>Pista: <em>“¿Qué canciones priorizar para la próxima campaña/gira?”</em></p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="un-mundo-lleno-de-herramientas">
+<h2>2) Un mundo lleno de herramientas<a class="headerlink" href="#un-mundo-lleno-de-herramientas" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Python como recurso principal:</strong> Pronto nos introduciremos a la programación con Python.</p></li>
+<li><p><strong>¿De donde provienen los datos?:</strong> Podemos conseguir datos de distintas fuentes: web scraping, bases de datos, o bien, en archivos planos como libros Excel o CSV.</p></li>
+<li><p><strong>Tus primeros pasos:</strong> Empezaremos realizando exploraciones de datos en archivos planos, luego pasaremos a hacer la exploración en bases de datos (Sprint 3) y posterior a eso, exploraremos el mismo proceso en Python (Sprint 5).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="da-en-diferentes-tipos-de-organizaciones">
+<h2>3) DA en diferentes tipos de organizaciones<a class="headerlink" href="#da-en-diferentes-tipos-de-organizaciones" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Startup:</strong> rol generalista (limpieza → insight → slide). Velocidad &gt; formalización.</p></li>
+<li><p><strong>Mid-size:</strong> especialización moderada; DA trabaja con BI/DE; procesos básicos de gobierno.</p></li>
+<li><p><strong>Enterprise:</strong> clara división de funciones, compliance, estándares estrictos, <em>data governance</em>.</p></li>
+</ul>
+<p><strong>Implicaciones para el DA:</strong></p>
+<ul class="simple">
+<li><p>En entornos pequeños, el DA diseña flujos de extremo a extremo.</p></li>
+<li><p>En empresas grandes, el foco es claridad, trazabilidad y <em>hand-off</em> impecable.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="tipos-de-seniority">
+<h2>4) Tipos de Seniority<a class="headerlink" href="#tipos-de-seniority" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Junior:</strong> limpieza y métricas básicas; documentación guiada; foco en <em>best practices</em>.</p></li>
+<li><p><strong>Mid:</strong> autonomía en limpieza/comunicación; propone KPIs y flujos de trabajo.</p></li>
+<li><p><strong>Senior:</strong> define estándares, lidera entregas complejas y coordinación con otros roles.</p></li>
+<li><p><strong>Lead/Manager:</strong> visión, priorización de iniciativas, relación con negocio.</p></li>
+</ul>
+<p><strong>Autoevaluación (rápida):</strong></p>
+<ul class="simple">
+<li><p>¿Puedo explicar mi decisión metodológica a un stakeholder no técnico?</p></li>
+<li><p>¿Mis archivos se entienden sin mí (nombres, notas, <code class="docutils literal notranslate"><span class="pre">change_log</span></code>)?</p></li>
+<li><p>¿Sé cuándo escalar a BI/DE/DS?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="work-process-de-la-pregunta-a-la-entrega">
+<h2>5) Work Process (de la pregunta a la entrega)<a class="headerlink" href="#work-process-de-la-pregunta-a-la-entrega" title="Link to this heading">#</a></h2>
+<p>Un flujo práctico y repetible para el DA:</p>
+<ol class="arabic simple">
+<li><p><strong>Descubrir el problema</strong></p>
+<ul class="simple">
+<li><p>¿Qué decisión se tomará? ¿Qué KPI importa? ¿Para quién?</p></li>
+</ul>
+</li>
+<li><p><strong>Auditar fuentes</strong></p>
+<ul class="simple">
+<li><p>¿Qué hay en <code class="docutils literal notranslate"><span class="pre">raw_songs</span></code>/<code class="docutils literal notranslate"><span class="pre">raw_albums</span></code>? ¿Qué issues evidencia <code class="docutils literal notranslate"><span class="pre">data_dictionary</span></code>?</p></li>
+</ul>
+</li>
+<li><p><strong>Limpieza y estandarización</strong></p>
+<ul class="simple">
+<li><p>Fechas a un estándar (ISO 8601), booleanos a TRUE/FALSE, números sin símbolos, remover duplicados.</p></li>
+</ul>
+</li>
+<li><p><strong>Cálculo &amp; EDA</strong></p>
+<ul class="simple">
+<li><p>Métricas simples (SUM, COUNT, AVERAGE, MIN, MAX), segmentaciones por álbum/era.</p></li>
+</ul>
+</li>
+<li><p><strong>Visualización &amp; narrativa</strong></p>
+<ul class="simple">
+<li><p>Gráfico (barra/línea). ¿Qué significa? ¿Qué acción sugiere?</p></li>
+</ul>
+</li>
+<li><p><strong>Handoff &amp; documentación</strong></p>
+<ul class="simple">
+<li><p>Archivo ordenado (nombres de hojas, formato), <strong><code class="docutils literal notranslate"><span class="pre">change_log</span></code></strong> con pasos y ejemplos antes/después.</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p>Relación con OSEMN: <strong>Obtain</strong> (fuentes) → <strong>Scrub</strong> (limpieza) → <strong>Explore</strong> (EDA) → <strong>Model</strong> (agregados/segmentos) → <strong>iNterpret</strong> (insights/decisión).</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="aplicacion-conceptual-al-caso-taylor-swift">
+<h2>6) Aplicación conceptual al caso Taylor Swift<a class="headerlink" href="#aplicacion-conceptual-al-caso-taylor-swift" title="Link to this heading">#</a></h2>
+<div style="text-align: center">
+    <img src="https://raw.githubusercontent.com/ljpiere/tpdata_python/main/images/w1s1.png" width="700">
+</div><p>¿Conoces a Taylor Swift?</p>
+<p><strong>Contexto:</strong> <code class="docutils literal notranslate"><span class="pre">taylor_swift_da_intro.xlsx</span></code> → hojas <code class="docutils literal notranslate"><span class="pre">raw_songs</span></code>, <code class="docutils literal notranslate"><span class="pre">raw_albums</span></code>, <code class="docutils literal notranslate"><span class="pre">data_dictionary</span></code>, <code class="docutils literal notranslate"><span class="pre">change_log</span></code>, <code class="docutils literal notranslate"><span class="pre">summary_template</span></code>.</p>
+<p><strong>Paso A — Inspección y mapeo</strong></p>
+<ul class="simple">
+<li><p>Revisa <code class="docutils literal notranslate"><span class="pre">data_dictionary</span></code> para entender tipos esperados y definiciones.</p></li>
+<li><p>Lista de <strong>riesgos</strong>: fechas mixtas, booleanos no estándar (Yes/No/1/0), separación inconsistente en <code class="docutils literal notranslate"><span class="pre">Writers</span></code>, números con símbolos/comas, duplicados.</p></li>
+</ul>
+<p><strong>Paso B — Reglas de limpieza (definir antes de tocar datos)</strong></p>
+<ul class="simple">
+<li><p>Fechas → <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>.</p></li>
+<li><p>Booleanos → <code class="docutils literal notranslate"><span class="pre">{TRUE,</span> <span class="pre">FALSE}</span></code> únicamente.</p></li>
+<li><p>Números → sin símbolos, sin espacios; separador decimal consistente.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Writers</span></code> → separador único (p. ej., <code class="docutils literal notranslate"><span class="pre">;</span></code>).</p></li>
+<li><p>Duplicados → criterio: columnas clave <code class="docutils literal notranslate"><span class="pre">Song</span></code> + <code class="docutils literal notranslate"><span class="pre">Album</span></code> + <code class="docutils literal notranslate"><span class="pre">Release</span> <span class="pre">Date</span></code> (definir).</p></li>
+</ul>
+<p><strong>Paso C — Documentación (change_log)</strong></p>
+<ul class="simple">
+<li><p>Cada cambio = fila con <strong>quién/cuándo/qué</strong> + ejemplo <strong>antes/después</strong>.</p></li>
+</ul>
+<p><strong>Paso D — Métricas base (summary_template)</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Tracks</span></code>, <code class="docutils literal notranslate"><span class="pre">Unique</span> <span class="pre">Albums</span></code>, <code class="docutils literal notranslate"><span class="pre">Average</span> <span class="pre">Streams</span></code>, <code class="docutils literal notranslate"><span class="pre">Average</span> <span class="pre">Views</span></code>, <code class="docutils literal notranslate"><span class="pre">Explicit</span> <span class="pre">TRUE</span></code>.</p></li>
+<li><p>Añadir un gráfico simple (barra/línea) para comunicar.</p></li>
+</ul>
+<p><strong>Paso E — Narrativa breve</strong></p>
+<ul class="simple">
+<li><p>“Top canciones por streams promedio”, “outliers”, “recomendación de foco para campaña/artista/tour”.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ejercicios-practicos-en-google-sheets">
+<h2>8) Ejercicios prácticos en Google Sheets<a class="headerlink" href="#ejercicios-practicos-en-google-sheets" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>Archivo base:</strong> <code class="docutils literal notranslate"><span class="pre">taylor_swift_da_intro.xlsx</span></code><br />
+<strong>Objetivo:</strong> practicar limpieza y exploración ligera <strong>solo en Google Sheets</strong> (sin programar). Trabaja SIEMPRE sobre una copia limpia.</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="ejercicio-1-preparacion-del-archivo-1015-min">
+<h3>Ejercicio 1 — Preparación del archivo (10–15 min)<a class="headerlink" href="#ejercicio-1-preparacion-del-archivo-1015-min" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Sube el .xlsx a Google Drive</strong> → clic derecho → <strong>Abrir con → Hojas de cálculo de Google</strong>.</p></li>
+<li><p><strong>Duplica la hoja</strong> <code class="docutils literal notranslate"><span class="pre">raw_songs</span></code> como <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code> (clic derecho en pestaña → <strong>Duplicar</strong>). <em>Nunca</em> edites <code class="docutils literal notranslate"><span class="pre">raw_songs</span></code>.</p></li>
+<li><p><strong>Congela</strong> la fila de encabezados: <strong>Ver → Congelar → 1 fila</strong>.</p></li>
+<li><p><strong>Ajusta anchos</strong> (doble clic en separador de columna) y revisa que los encabezados sean legibles.</p></li>
+<li><p><strong>Renombra</strong> hojas si hace falta (p.ej., <code class="docutils literal notranslate"><span class="pre">clean_*</span></code>, <code class="docutils literal notranslate"><span class="pre">summary_*</span></code>).</p></li>
+<li><p>En la hoja <code class="docutils literal notranslate"><span class="pre">change_log</span></code>, agrega tu primera fila: <em>“Creé hoja clean_songs a partir de raw_songs”</em> (fecha/hora opcional).</p></li>
+</ol>
+<p><strong>Entrega esperada:</strong> archivo ordenado con estructura clara.</p>
+<blockquote>
+<div><p><strong>¿Por qué no trabajar sobre los datos base?</strong> Para preservar el insumo original y poder repetir/validar cambios sin riesgo.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="ejercicio-2-estandarizar-fechas-y-booleanos-1520-min">
+<h3>Ejercicio 2 — Estandarizar fechas y booleanos (15–20 min)<a class="headerlink" href="#ejercicio-2-estandarizar-fechas-y-booleanos-1520-min" title="Link to this heading">#</a></h3>
+<p><strong>A) Fechas (<code class="docutils literal notranslate"><span class="pre">Release</span> <span class="pre">Date</span></code>, <code class="docutils literal notranslate"><span class="pre">Date</span> <span class="pre">Added</span></code>) a formato <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>:</strong></p>
+<ul>
+<li><p>Selecciona la(s) columna(s) de fecha → <strong>Formato → Número → Fecha</strong>.</p></li>
+<li><p>Si se importaron como <em>texto</em>, usa una <strong>columna auxiliar</strong> en <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=</span><span class="n">IFERROR</span><span class="p">(</span><span class="n">TO_DATE</span><span class="p">(</span><span class="n">DATEVALUE</span><span class="p">(</span><span class="n">A2</span><span class="p">)),</span> 
+  <span class="n">DATE</span><span class="p">(</span><span class="n">VALUE</span><span class="p">(</span><span class="n">MID</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span> <span class="n">VALUE</span><span class="p">(</span><span class="n">MID</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">)),</span> <span class="n">VALUE</span><span class="p">(</span><span class="n">MID</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Ajusta <code class="docutils literal notranslate"><span class="pre">A2</span></code> al nombre/columna real. Copia hacia abajo, <strong>Pegar especial → Solo valores</strong> y reemplaza la original.</p>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>B) Booleanos (<code class="docutils literal notranslate"><span class="pre">Explicit</span></code>) a <code class="docutils literal notranslate"><span class="pre">TRUE/FALSE</span></code>:</strong></p>
+<ul>
+<li><p>En columna auxiliar (p.ej., junto a <code class="docutils literal notranslate"><span class="pre">Explicit</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=</span><span class="n">IF</span><span class="p">(</span><span class="n">OR</span><span class="p">(</span><span class="n">LOWER</span><span class="p">(</span><span class="n">B2</span><span class="p">)</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="n">B2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">LOWER</span><span class="p">(</span><span class="n">B2</span><span class="p">)</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">),</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Copia hacia abajo → <strong>Pegar especial → Solo valores</strong> → reemplaza la columna original.</p>
+</li>
+</ul>
+<p><strong>Entrega esperada:</strong> fechas y booleanos consistentes, documentados en <code class="docutils literal notranslate"><span class="pre">change_log</span></code> (qué hiciste y por qué).</p>
+</section>
+<hr class="docutils" />
+<section id="ejercicio-3-numeros-y-separadores-1520-min">
+<h3>Ejercicio 3 — Números y separadores (15–20 min)<a class="headerlink" href="#ejercicio-3-numeros-y-separadores-1520-min" title="Link to this heading">#</a></h3>
+<p><strong>Objetivo:</strong> limpiar <code class="docutils literal notranslate"><span class="pre">Spotify</span> <span class="pre">Streams</span> <span class="pre">(M)</span></code> y <code class="docutils literal notranslate"><span class="pre">YouTube</span> <span class="pre">Views</span> <span class="pre">(M)</span></code> para que queden como <strong>número</strong> (sin símbolos/comas/espacios).</p>
+<ol class="arabic">
+<li><p><strong>Quitar símbolos</strong> con <strong>Buscar y reemplazar</strong> (Ctrl/Cmd + H):</p>
+<ul class="simple">
+<li><p>Buscar: <code class="docutils literal notranslate"><span class="pre">$</span></code> → Reemplazar: <em>(vacío)</em> → <strong>Reemplazar todo</strong>.</p></li>
+<li><p>Repite con <code class="docutils literal notranslate"><span class="pre">€</span></code>, espacios <code class="docutils literal notranslate"> </code>, o comas <code class="docutils literal notranslate"><span class="pre">,</span></code> si corresponde.</p></li>
+</ul>
+</li>
+<li><p>Si aún quedan textos, crea <strong>columna auxiliar</strong> con fórmula y luego pega valores:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=</span><span class="n">VALUE</span><span class="p">(</span><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="n">REGEXREPLACE</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="s2">&quot;[^\d\.\,\-]&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">),</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Explicación: elimina todo lo que no sea dígito/punto/coma/signo; luego cambia comas por puntos y convierte a número.</p></li>
+</ul>
+</li>
+<li><p><strong>Verifica</strong> con <strong>Datos → Crear filtro</strong> y ordena de mayor a menor para confirmar que se comportan como números.</p></li>
+</ol>
+<p><strong>Entrega esperada:</strong> columnas numéricas limpias (tipo número), con nota en <code class="docutils literal notranslate"><span class="pre">change_log</span></code>.</p>
+<blockquote>
+<div><p><strong>¿Por qué no escribir manualmente puntos/comas?</strong> Porque es propenso a error y no escala; además, pierde trazabilidad en <code class="docutils literal notranslate"><span class="pre">change_log</span></code>.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="ejercicio-4-duplicados-y-separadores-de-texto-1015-min">
+<h3>Ejercicio 4 — Duplicados y separadores de texto (10–15 min)<a class="headerlink" href="#ejercicio-4-duplicados-y-separadores-de-texto-1015-min" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Detectar/eliminar duplicados</strong> según regla <em>(Song + Album + Release Date)</em>:</p>
+<ul class="simple">
+<li><p>Selecciona el rango de datos en <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code> → <strong>Datos → Limpieza de datos → Quitar duplicados</strong>.</p></li>
+<li><p>Marca columnas de la regla y confirma.</p></li>
+</ul>
+</li>
+<li><p><strong>Unificar separador en <code class="docutils literal notranslate"><span class="pre">Writers</span></code> a <code class="docutils literal notranslate"><span class="pre">;</span></code></strong>:</p>
+<ul>
+<li><p><strong>Editar → Buscar y reemplazar</strong>: reemplaza <code class="docutils literal notranslate"><span class="pre">,</span> </code> o <code class="docutils literal notranslate"><span class="pre">/</span></code> por <code class="docutils literal notranslate"><span class="pre">;</span></code> (repite según variantes detectadas).</p></li>
+<li><p>Alternativa con fórmula (columna auxiliar y luego pega valores):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=</span><span class="n">SUBSTITUTE</span><span class="p">(</span><span class="n">SUBSTITUTE</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">),</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Entrega esperada:</strong> sin duplicados y separador consistente en <code class="docutils literal notranslate"><span class="pre">Writers</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="ejercicio-5-metricas-y-visualizacion-1520-min">
+<h3>Ejercicio 5 — Métricas y visualización (15–20 min)<a class="headerlink" href="#ejercicio-5-metricas-y-visualizacion-1520-min" title="Link to this heading">#</a></h3>
+<p>Trabaja en la hoja <code class="docutils literal notranslate"><span class="pre">summary_template</span></code> (ya creada en el archivo base). Usa referencias a <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code>:</p>
+<ol class="arabic">
+<li><p><strong>Total Tracks</strong> (conteo de filas con nombre de canción en <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code>!A:A):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>=COUNTA(clean_songs!A2:A)
+</pre></div>
+</div>
+</li>
+<li><p><strong>Unique Albums</strong> (contar distintos en <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code>!B:B):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>=COUNTA(UNIQUE(clean_songs!B2:B))
+</pre></div>
+</div>
+</li>
+<li><p><strong>Average Spotify Streams (M)</strong> (columna numérica ya limpia, p.ej., <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code>!F:F):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>=AVERAGE(clean_songs!F2:F)
+</pre></div>
+</div>
+</li>
+<li><p><strong>Average YouTube Views (M)</strong> (p.ej., <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code>!G:G):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>=AVERAGE(clean_songs!G2:G)
+</pre></div>
+</div>
+</li>
+<li><p><strong>Tracks Marked Explicit</strong> (columna booleana en <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code>!H:H):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>=COUNTIF(clean_songs!H2:H, TRUE)
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Gráfico de barras (top 5 por Streams o por Views):</strong></p>
+<ul class="simple">
+<li><p>En <code class="docutils literal notranslate"><span class="pre">clean_songs</span></code>, <strong>Ordenar</strong> de mayor a menor por la métrica elegida.</p></li>
+<li><p>Seleccionar <strong>las 5 primeras filas</strong> (columna <code class="docutils literal notranslate"><span class="pre">Song</span></code> + columna métrica).</p></li>
+<li><p><strong>Insertar → Gráfico</strong> → Tipo <strong>Barras</strong>. Ajusta títulos/etiquetas en el panel derecho.</p></li>
+</ul>
+<p><strong>Insights y recomendación:</strong> escribe <strong>3 viñetas</strong> con hallazgos y <strong>1 recomendación</strong> breve (p.ej., “enfocar promoción en álbum X por mayor <em>streams</em> promedio”).</p>
+<p><strong>Entrega esperada:</strong> <code class="docutils literal notranslate"><span class="pre">summary_template</span></code> completo + 1 gráfico simple + viñetas.</p>
+</section>
+<hr class="docutils" />
+<section id="ejercicio-6-handoff-y-checklist-510-min">
+<h3>Ejercicio 6 — Handoff y checklist (5–10 min)<a class="headerlink" href="#ejercicio-6-handoff-y-checklist-510-min" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Revisa nombres de hojas y consistencia general.</p></li>
+<li><p>Verifica que <code class="docutils literal notranslate"><span class="pre">change_log</span></code> enumere los pasos clave (fechas, booleanos, limpieza numérica, duplicados, writers).</p></li>
+<li><p>Deja <strong>2–3 preguntas para el stakeholder</strong> (suposiciones o limitaciones que encontraste).</p></li>
+</ul>
+<p><strong>Entrega esperada:</strong> archivo listo para compartir + 3 preguntas de seguimiento.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="rubrica-sugerida-evaluacion-formativa">
+<h2>Rúbrica sugerida (evaluación formativa)<a class="headerlink" href="#rubrica-sugerida-evaluacion-formativa" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Identificación de problemas de calidad y propuesta de reglas (30%)</p></li>
+<li><p>Limpieza consistente y trazabilidad en <code class="docutils literal notranslate"><span class="pre">change_log</span></code> (30%)</p></li>
+<li><p>Métricas y visualización correctas + narrativa clara (30%)</p></li>
+<li><p>Orden y presentación del archivo (10%)</p></li>
+</ul>
+</section>
+<section id="cierre">
+<h2>Cierre<a class="headerlink" href="#cierre" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El <strong>DA</strong> es el puente entre <strong>preguntas de negocio</strong> y <strong>evidencia en datos</strong>.</p></li>
+<li><p>Un proceso claro y trazable es tan importante como el resultado.</p></li>
+</ul>
+</section>
+<section id="siguientes-pasos">
+<h2>Siguientes Pasos<a class="headerlink" href="#siguientes-pasos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Próxima sesión:</strong> profundizaremos en el ecosistema de datos y en el flujo de punta a punta.</p></li>
+<li><p><strong>Participación continua:</strong> asistir a Co-Learning y a Sprint Focus, y usar los canales de Discord para hacer preguntas.</p></li>
+<li><p><strong>Recordatorios:</strong> la grabación y recursos utilizados, se comparten al finalizar la sesión; en caso de necesitar apoyo adicional, agenda un 1:1.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bienvenidos al mundo de la Analítica de Datos</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material">Material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-the-da">1) Role of the DA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-mundo-lleno-de-herramientas">2) Un mundo lleno de herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-en-diferentes-tipos-de-organizaciones">3) DA en diferentes tipos de organizaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-seniority">4) Tipos de Seniority</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-process-de-la-pregunta-a-la-entrega">5) Work Process (de la pregunta a la entrega)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-conceptual-al-caso-taylor-swift">6) Aplicación conceptual al caso Taylor Swift</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-practicos-en-google-sheets">8) Ejercicios prácticos en Google Sheets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-preparacion-del-archivo-1015-min">Ejercicio 1 — Preparación del archivo (10–15 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-estandarizar-fechas-y-booleanos-1520-min">Ejercicio 2 — Estandarizar fechas y booleanos (15–20 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3-numeros-y-separadores-1520-min">Ejercicio 3 — Números y separadores (15–20 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4-duplicados-y-separadores-de-texto-1015-min">Ejercicio 4 — Duplicados y separadores de texto (10–15 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5-metricas-y-visualizacion-1520-min">Ejercicio 5 — Métricas y visualización (15–20 min)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-6-handoff-y-checklist-510-min">Ejercicio 6 — Handoff y checklist (5–10 min)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rubrica-sugerida-evaluacion-formativa">Rúbrica sugerida (evaluación formativa)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siguientes-pasos">Siguientes Pasos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gina Buvoli
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
