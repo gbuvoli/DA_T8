@@ -4,8 +4,4 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: sp1_A.ipynb
-- file: sp1_B.ipynb
+- file: sp0_postonboarding
