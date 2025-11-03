@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min) &#8212; Bootcamp Classes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Sprint2_Webinar04_Practico';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min)" href="Sprint2_Webinar03_Teorico.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/t10logo.png" class="logo__image only-light" alt="Bootcamp Classes - Home"/>
+    <script>document.write(`<img src="_static/t10logo.png" class="logo__image only-dark" alt="Bootcamp Classes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al mundo de la Analítica de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Sp0_postonboarding.html">Sesión 0 — Introducción y Bienvenida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sp1_teo.html">Sprint 1 - Introducción a tu futura profesión</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sp2_intro.html">SPRINT 2: BIENVENIDO</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Sprint2_Webinar03_Teorico.html">Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min)</a></li>
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min)</a></li>
+
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSprint2_Webinar04_Practico.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Sprint2_Webinar04_Practico.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-la-sesion">Objetivos de la sesión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material">Material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda-80-min-practica">Agenda (80 min, práctica)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-descarga-y-vista-previa">0) Setup (descarga y vista previa)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1-limpieza-de-datos-2030-min">Parte 1 — Limpieza de datos (20–30 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-rooms">0. Break rooms:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normaliza-columnas">1.1 Normaliza columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estandariza-semana-clave-temporal">1.2 Estandariza semana (clave temporal)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-2-enriquecimiento-2030-min">Parte 2 — Enriquecimiento (20–30 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-por-store-type-y-size">2.1 Join por <code class="docutils literal notranslate"><span class="pre">Store</span></code> → <code class="docutils literal notranslate"><span class="pre">Type</span></code> y <code class="docutils literal notranslate"><span class="pre">Size</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-por-dept-dept-name">2.2 Join por <code class="docutils literal notranslate"><span class="pre">Dept</span></code> → <code class="docutils literal notranslate"><span class="pre">dept_name</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-y-troubleshooting">2.3 Verificación y troubleshooting</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-3-resumen-con-kpis-via-tablas-dinamicas-2030-min">Parte 3 — Resumen con KPIs vía Tablas Dinámicas (20–30 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kpi-1-eficiencia-ventas-por-m2">KPI 1 — Eficiencia (Ventas por m²)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kpi-2-participacion-del-departamento-sobre-total">KPI 2 — Participación del departamento (% sobre total)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kpi-3-volatilidad-coeficiente-de-variacion-cv">KPI 3 — Volatilidad (Coeficiente de Variación, CV)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entregables-al-cierre-de-la-sesion-parte-1-de-2">Entregables al cierre de la sesión (Parte 1 de 2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criterios-de-evaluacion-rapidos">Criterios de evaluación rápidos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice-formulas-utiles-y-tips">Apéndice: fórmulas útiles y tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siguientes-pasos">Siguientes Pasos</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sprint-2-webinar-4-walmart-project-limpieza-enriquecimiento-y-resumen-con-kpis-80-min">
+<h1>Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min)<a class="headerlink" href="#sprint-2-webinar-4-walmart-project-limpieza-enriquecimiento-y-resumen-con-kpis-80-min" title="Link to this heading">#</a></h1>
+<p><strong>Creado:</strong> 2025-09-14 01:23<br />
+<strong>Cobertura:</strong> Solo <strong>mitad de los ítems</strong> del proyecto → <strong>Partes 1–3</strong> (dejamos Dashboard, Resumen Ejecutivo y QA para la Parte 2).</p>
+<hr class="docutils" />
+<section id="objetivos-de-la-sesion">
+<h2>Objetivos de la sesión<a class="headerlink" href="#objetivos-de-la-sesion" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>LIMPIAR</strong>: normalizar nombres, estandarizar fechas por semana (<code class="docutils literal notranslate"><span class="pre">semana_limpia</span></code>).</p></li>
+<li><p><strong>ENRIQUECER</strong>: unir <code class="docutils literal notranslate"><span class="pre">raw_ventas</span></code> con <code class="docutils literal notranslate"><span class="pre">stores</span></code> y <code class="docutils literal notranslate"><span class="pre">departments</span></code> vía <code class="docutils literal notranslate"><span class="pre">XLOOKUP/VLOOKUP</span></code>.</p></li>
+<li><p><strong>RESUMIR</strong>: construir pivots para <strong>KPI de eficiencia (ventas/m²)</strong>, <strong>participación</strong> y <strong>volatilidad (CV)</strong>.</p></li>
+<li><p>Documentar supuestos y validaciones básicas del merge.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="material">
+<h2>Material<a class="headerlink" href="#material" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Metodología: Breakout Rooms</p></li>
+<li><p>Kahoot: W4_Sprint2 (finalizando sesión)</p></li>
+</ul>
+</section>
+<section id="agenda-80-min-practica">
+<h2>Agenda (80 min, práctica)<a class="headerlink" href="#agenda-80-min-practica" title="Link to this heading">#</a></h2>
+<p><strong>Bienvenida + Introducción</strong></p>
+<ol class="arabic simple">
+<li><p>Setup y descripción del dataset (5 min)</p></li>
+<li><p><strong>Parte 1</strong> — Limpieza de datos (25–30 min)</p></li>
+<li><p><strong>Parte 2</strong> — Enriquecimiento (20–25 min)</p></li>
+<li><p><strong>Parte 3</strong> — Resumen con KPIs vía tablas dinámicas (20–25 min)</p></li>
+</ol>
+<blockquote>
+<div><p><strong>No cubrimos hoy</strong>: Dashboard, Resumen C→F→I, QA (se verán en la próxima clase).</p>
+</div></blockquote>
+</section>
+<section id="cierre">
+<h2>Cierre<a class="headerlink" href="#cierre" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kahoot</p></li>
+<li><p>Repaso de aprendizajes y próximos pasos</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="setup-descarga-y-vista-previa">
+<h2>0) Setup (descarga y vista previa)<a class="headerlink" href="#setup-descarga-y-vista-previa" title="Link to this heading">#</a></h2>
+<p>Descarga los archivos de datos (úsalos en Excel/Sheets):</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#/mnt/data/walmart_sales.csv"><span class="xref myst">walmart_sales.csv</span></a></p></li>
+<li><p><a class="reference internal" href="#/mnt/data/walmart_stores.csv"><span class="xref myst">walmart_stores.csv</span></a></p></li>
+<li><p><a class="reference internal" href="#/mnt/data/walmart_departments.csv"><span class="xref myst">walmart_departments.csv</span></a></p></li>
+<li><p><strong>(Opcional)</strong>: <a class="reference internal" href="#/mnt/data/walmart_project_data.xlsx"><span class="xref myst">walmart_project_data.xlsx</span></a> — ya con hojas: <code class="docutils literal notranslate"><span class="pre">raw_ventas</span></code>, <code class="docutils literal notranslate"><span class="pre">stores</span></code>, <code class="docutils literal notranslate"><span class="pre">departments</span></code>.</p></li>
+</ul>
+<blockquote>
+<div><p>Si usas Python para mostrar ejemplos en vivo, ejecuta la próxima celda para una vista previa.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">sales</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/mnt/data/walmart_sales.csv&quot;</span><span class="p">)</span>
+<span class="n">stores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/mnt/data/walmart_stores.csv&quot;</span><span class="p">)</span>
+<span class="n">depts</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/mnt/data/walmart_departments.csv&quot;</span><span class="p">)</span>
+
+<span class="n">sales</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">stores</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">depts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">sales</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/mnt/data/walmart_sales.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">stores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/mnt/data/walmart_stores.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">depts</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/mnt/data/walmart_departments.csv&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~\anaconda3\Lib\site-packages\pandas\io\common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/mnt/data/walmart_sales.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="parte-1-limpieza-de-datos-2030-min">
+<h1>Parte 1 — Limpieza de datos (20–30 min)<a class="headerlink" href="#parte-1-limpieza-de-datos-2030-min" title="Link to this heading">#</a></h1>
+<p><strong>Hoja de trabajo:</strong> duplica <code class="docutils literal notranslate"><span class="pre">raw_ventas</span></code> → nómbrala <code class="docutils literal notranslate"><span class="pre">clean_ventas</span></code> (marca pestaña en <strong>verde</strong>).</p>
+<section id="break-rooms">
+<h2>0. Break rooms:<a class="headerlink" href="#break-rooms" title="Link to this heading">#</a></h2>
+<p>Identifica qué cambios harías a la hoja de cáculo.</p>
+<ul class="simple">
+<li><p>Cambiarias nombres de columnas?</p></li>
+<li><p>Agregarías más columnas?</p></li>
+<li><p>Cambiarias algún valor de las columnas? Quizás los 0/1</p></li>
+</ul>
+</section>
+<section id="normaliza-columnas">
+<h2>1.1 Normaliza columnas<a class="headerlink" href="#normaliza-columnas" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Renombra a <strong>snake_case</strong> o nombres declarativos: <code class="docutils literal notranslate"><span class="pre">tienda</span> <span class="pre">|</span> <span class="pre">dept</span> <span class="pre">|</span> <span class="pre">fecha</span> <span class="pre">|</span> <span class="pre">ventas_semanales</span> <span class="pre">|</span> <span class="pre">es_feriado</span></code></p></li>
+<li><p>Aplica:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">=TRIM()</span></code> para eliminar espacios sobrantes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=LOWER()/UPPER()/PROPER()</span></code> para estandarizar texto</p></li>
+<li><p>Validación de datos si corresponde (<code class="docutils literal notranslate"><span class="pre">es_feriado</span></code> ∈ {0,1})</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="estandariza-semana-clave-temporal">
+<h2>1.2 Estandariza semana (clave temporal)<a class="headerlink" href="#estandariza-semana-clave-temporal" title="Link to this heading">#</a></h2>
+<p>Crea columna <strong><code class="docutils literal notranslate"><span class="pre">semana_limpia</span></code></strong> (año-semana ISO; lunes como primer día):</p>
+<ul class="simple">
+<li><p><strong>Excel (semana ISO aproximada)</strong><br />
+<code class="docutils literal notranslate"><span class="pre">=YEAR([&#64;fecha])</span> <span class="pre">&amp;</span> <span class="pre">&quot;-&quot;</span> <span class="pre">&amp;</span> <span class="pre">TEXT(WEEKNUM([&#64;fecha],</span> <span class="pre">2),</span> <span class="pre">&quot;00&quot;)</span></code></p></li>
+<li><p><strong>Google Sheets</strong><br />
+<code class="docutils literal notranslate"><span class="pre">=YEAR(C2)</span> <span class="pre">&amp;</span> <span class="pre">&quot;-&quot;</span> <span class="pre">&amp;</span> <span class="pre">TEXT(WEEKNUM(C2,</span> <span class="pre">2),</span> <span class="pre">&quot;00&quot;)</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>Comprueba que todas las filas sean 2012. Si encuentras otras fechas, documenta el criterio (filtrar/ajustar).</p>
+</div></blockquote>
+<p><strong>Salida esperada</strong>: hoja <code class="docutils literal notranslate"><span class="pre">clean_ventas</span></code> lista para análisis:
+<code class="docutils literal notranslate"><span class="pre">tienda</span> <span class="pre">|</span> <span class="pre">dept</span> <span class="pre">|</span> <span class="pre">fecha</span> <span class="pre">|</span> <span class="pre">ventas_semanales</span> <span class="pre">|</span> <span class="pre">es_feriado</span> <span class="pre">|</span> <span class="pre">semana_limpia</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="parte-2-enriquecimiento-2030-min">
+<h1>Parte 2 — Enriquecimiento (20–30 min)<a class="headerlink" href="#parte-2-enriquecimiento-2030-min" title="Link to this heading">#</a></h1>
+<p><strong>Objetivo</strong>: añadir <code class="docutils literal notranslate"><span class="pre">tipo</span></code>, <code class="docutils literal notranslate"><span class="pre">tamaño</span></code>, <code class="docutils literal notranslate"><span class="pre">nombre_dept</span></code> a <code class="docutils literal notranslate"><span class="pre">clean_ventas</span></code> desde <code class="docutils literal notranslate"><span class="pre">stores</span></code> y <code class="docutils literal notranslate"><span class="pre">departments</span></code>.</p>
+<section id="join-por-store-type-y-size">
+<h2>2.1 Join por <code class="docutils literal notranslate"><span class="pre">Store</span></code> → <code class="docutils literal notranslate"><span class="pre">Type</span></code> y <code class="docutils literal notranslate"><span class="pre">Size</span></code><a class="headerlink" href="#join-por-store-type-y-size" title="Link to this heading">#</a></h2>
+<p>En <code class="docutils literal notranslate"><span class="pre">clean_ventas</span></code>, inserta columnas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tipo</span></code> (desde <code class="docutils literal notranslate"><span class="pre">stores[Type]</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tamaño</span></code> (desde <code class="docutils literal notranslate"><span class="pre">stores[Size]</span></code>)</p></li>
+</ul>
+<p><strong>Google Sheets — con <code class="docutils literal notranslate"><span class="pre">XLOOKUP</span></code></strong><br />
+<code class="docutils literal notranslate"><span class="pre">=XLOOKUP(A2,</span> <span class="pre">Stores!A:A,</span> <span class="pre">Stores!B:B,</span> <span class="pre">&quot;NoMatch&quot;,</span> <span class="pre">0))</span></code></p>
+<p><em>(Sheets usa la misma sintaxis de XLOOKUP; con VLOOKUP, recuerda el índice de columna y <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>)</em></p>
+</section>
+<section id="join-por-dept-dept-name">
+<h2>2.2 Join por <code class="docutils literal notranslate"><span class="pre">Dept</span></code> → <code class="docutils literal notranslate"><span class="pre">dept_name</span></code><a class="headerlink" href="#join-por-dept-dept-name" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">=XLOOKUP(B2,</span> <span class="pre">Departments!A:A,</span> <span class="pre">Departments!B:B,</span> <span class="pre">&quot;NoMatch&quot;,</span> <span class="pre">0)</span></code> → <code class="docutils literal notranslate"><span class="pre">nombre_dept</span></code></p>
+</section>
+<section id="verificacion-y-troubleshooting">
+<h2>2.3 Verificación y troubleshooting<a class="headerlink" href="#verificacion-y-troubleshooting" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Cuenta no coincidencias: <code class="docutils literal notranslate"><span class="pre">=COUNTIF(RangoResultados,&quot;NoMatch&quot;)</span></code></p></li>
+<li><p>Revisa duplicados en claves (<code class="docutils literal notranslate"><span class="pre">Store</span></code>, <code class="docutils literal notranslate"><span class="pre">Dept</span></code>) según tu diseño de unión.</p></li>
+<li><p>Documento “JOIN_DOC”:</p>
+<ul>
+<li><p>Claves y cardinalidad asumidas</p></li>
+<li></li>
+<li><p>Decisiones tomadas ante errores (corrección, exclusión, imputación)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Salida esperada</strong>: <code class="docutils literal notranslate"><span class="pre">tienda</span> <span class="pre">|</span> <span class="pre">dept</span> <span class="pre">|</span> <span class="pre">fecha</span> <span class="pre">|</span> <span class="pre">ventas_semanales</span> <span class="pre">|</span> <span class="pre">es_feriado</span> <span class="pre">|</span> <span class="pre">semana_limpia</span> <span class="pre">|</span> <span class="pre">tipo</span> <span class="pre">|</span> <span class="pre">tamaño</span> <span class="pre">|</span> <span class="pre">nombre_dept</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="parte-3-resumen-con-kpis-via-tablas-dinamicas-2030-min">
+<h1>Parte 3 — Resumen con KPIs vía Tablas Dinámicas (20–30 min)<a class="headerlink" href="#parte-3-resumen-con-kpis-via-tablas-dinamicas-2030-min" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>Construye <strong>una pivot por KPI</strong> y deja los cálculos como <strong>campos calculados</strong> cuando aplique.</p>
+</div></blockquote>
+<section id="kpi-1-eficiencia-ventas-por-m2">
+<h2>KPI 1 — Eficiencia (Ventas por m²)<a class="headerlink" href="#kpi-1-eficiencia-ventas-por-m2" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Pivot (por <code class="docutils literal notranslate"><span class="pre">tienda</span></code> o <code class="docutils literal notranslate"><span class="pre">nombre_dept</span></code>):</p>
+<ul class="simple">
+<li><p>Valores: <strong>SUM(ventas_semanales)</strong> y <strong>AVERAGE(tamaño)</strong></p></li>
+</ul>
+</li>
+<li><p>Campo calculado <strong><code class="docutils literal notranslate"><span class="pre">ventasxmetro2</span></code></strong>:<br />
+<code class="docutils literal notranslate"><span class="pre">=SUM(ventas_semanales)</span> <span class="pre">/</span> <span class="pre">AVERAGE(tamaño)</span></code></p></li>
+<li><p>Ordena de mayor a menor.</p></li>
+</ol>
+<p><strong>Salida</strong>: columnas → <code class="docutils literal notranslate"><span class="pre">nombre_dept</span></code> | <code class="docutils literal notranslate"><span class="pre">SUM</span> <span class="pre">ventas</span></code> | <code class="docutils literal notranslate"><span class="pre">AVG</span> <span class="pre">tamaño</span></code> | <code class="docutils literal notranslate"><span class="pre">ventasxmetro2</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="kpi-2-participacion-del-departamento-sobre-total">
+<h2>KPI 2 — Participación del departamento (% sobre total)<a class="headerlink" href="#kpi-2-participacion-del-departamento-sobre-total" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Pivot por <code class="docutils literal notranslate"><span class="pre">nombre_dept</span></code> con <strong>SUM(ventas_semanales)</strong></p></li>
+<li><p>Mostrar valor como <strong>% del total</strong>.</p></li>
+</ol>
+<p><strong>Salida</strong>: <code class="docutils literal notranslate"><span class="pre">nombre_dept</span></code> | <code class="docutils literal notranslate"><span class="pre">%</span> <span class="pre">del</span> <span class="pre">total</span> <span class="pre">de</span> <span class="pre">ventas</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="kpi-3-volatilidad-coeficiente-de-variacion-cv">
+<h2>KPI 3 — Volatilidad (Coeficiente de Variación, CV)<a class="headerlink" href="#kpi-3-volatilidad-coeficiente-de-variacion-cv" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Pivot por <code class="docutils literal notranslate"><span class="pre">nombre_dept</span></code> con:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM(ventas_semanales)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STDEV(ventas_semanales)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AVERAGE(ventas_semanales)</span></code></p></li>
+</ul>
+</li>
+<li><p>Campo calculado <strong><code class="docutils literal notranslate"><span class="pre">cv</span></code></strong>:<br />
+<code class="docutils literal notranslate"><span class="pre">=STDEV(ventas_semanales)</span> <span class="pre">/</span> <span class="pre">AVERAGE(ventas_semanales)</span></code></p></li>
+</ol>
+<p><strong>Interpretación</strong>:</p>
+<ul class="simple">
+<li><p>CV ~ 0 → estable; CV ≥ 0.5 → volátil; CV ≥ 1 → muy volátil.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="entregables-al-cierre-de-la-sesion-parte-1-de-2">
+<h2>Entregables al cierre de la sesión (Parte 1 de 2)<a class="headerlink" href="#entregables-al-cierre-de-la-sesion-parte-1-de-2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Hoja <strong><code class="docutils literal notranslate"><span class="pre">clean_ventas</span></code></strong> lista.</p></li>
+<li><p>Hoja <strong><code class="docutils literal notranslate"><span class="pre">JOIN_DOC</span></code></strong> con supuestos y verificaciones (conteo de <code class="docutils literal notranslate"><span class="pre">NoMatch</span></code>, duplicados).</p></li>
+<li><p>Tres pivots, uno por KPI (<strong>eficiencia, participación, volatilidad</strong>) con campos calculados.</p></li>
+<li><p>2–3 bullets de hallazgos rápidos (sin dashboard todavía).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="criterios-de-evaluacion-rapidos">
+<h2>Criterios de evaluación rápidos<a class="headerlink" href="#criterios-de-evaluacion-rapidos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Limpieza</strong>: nomenclatura consistente y <code class="docutils literal notranslate"><span class="pre">semana_limpia</span></code> correcta.</p></li>
+<li><p><strong>Enriquecimiento</strong>: <code class="docutils literal notranslate"><span class="pre">XLOOKUP/VLOOKUP</span></code> correctos, verificación documentada.</p></li>
+<li><p><strong>KPIs</strong>: campos calculados y pivots claros, ordenados y legibles.</p></li>
+<li><p><strong>Razonamiento</strong>: Justificación de decisiones ante errores y outliers.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="apendice-formulas-utiles-y-tips">
+<h2>Apéndice: fórmulas útiles y tips<a class="headerlink" href="#apendice-formulas-utiles-y-tips" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">=TRIM()</span></code>, <code class="docutils literal notranslate"><span class="pre">=CLEAN()</span></code>, <code class="docutils literal notranslate"><span class="pre">=PROPER()</span></code>, validación de datos (listas).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=XLOOKUP(valor,</span> <span class="pre">rango_busqueda,</span> <span class="pre">rango_resultado,</span> <span class="pre">&quot;NoMatch&quot;,</span> <span class="pre">0)</span></code> (coincidencia exacta).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=VLOOKUP(valor,</span> <span class="pre">tabla,</span> <span class="pre">índice,</span> <span class="pre">FALSE)</span></code> (evita coincidencia aproximada salvo que la necesites).</p></li>
+<li><p><strong>Pivots</strong>: usa “Mostrar valores como % del total” para participación.</p></li>
+<li><p><strong>Documenta</strong>: todo supuesto de join y tratamiento de <code class="docutils literal notranslate"><span class="pre">NoMatch</span></code> en <code class="docutils literal notranslate"><span class="pre">JOIN_DOC</span></code>.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Cierre<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kahoot</p></li>
+<li><p>Repaso de aprendizajes y próximos pasos</p></li>
+</ul>
+</section>
+<section id="siguientes-pasos">
+<h2>Siguientes Pasos<a class="headerlink" href="#siguientes-pasos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Participación continua:</strong> asistir a Co-Learning y a Sprint Focus, y usar los canales de Discord para hacer preguntas.</p></li>
+<li><p><strong>Recordatorios:</strong> la grabación y recursos utilizados, se comparten al finalizar la sesión; en caso de necesitar apoyo adicional, agenda un 1:1.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Sprint2_Webinar03_Teorico.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min)</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-la-sesion">Objetivos de la sesión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material">Material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda-80-min-practica">Agenda (80 min, práctica)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-descarga-y-vista-previa">0) Setup (descarga y vista previa)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1-limpieza-de-datos-2030-min">Parte 1 — Limpieza de datos (20–30 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-rooms">0. Break rooms:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normaliza-columnas">1.1 Normaliza columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estandariza-semana-clave-temporal">1.2 Estandariza semana (clave temporal)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-2-enriquecimiento-2030-min">Parte 2 — Enriquecimiento (20–30 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-por-store-type-y-size">2.1 Join por <code class="docutils literal notranslate"><span class="pre">Store</span></code> → <code class="docutils literal notranslate"><span class="pre">Type</span></code> y <code class="docutils literal notranslate"><span class="pre">Size</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-por-dept-dept-name">2.2 Join por <code class="docutils literal notranslate"><span class="pre">Dept</span></code> → <code class="docutils literal notranslate"><span class="pre">dept_name</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-y-troubleshooting">2.3 Verificación y troubleshooting</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-3-resumen-con-kpis-via-tablas-dinamicas-2030-min">Parte 3 — Resumen con KPIs vía Tablas Dinámicas (20–30 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kpi-1-eficiencia-ventas-por-m2">KPI 1 — Eficiencia (Ventas por m²)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kpi-2-participacion-del-departamento-sobre-total">KPI 2 — Participación del departamento (% sobre total)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kpi-3-volatilidad-coeficiente-de-variacion-cv">KPI 3 — Volatilidad (Coeficiente de Variación, CV)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entregables-al-cierre-de-la-sesion-parte-1-de-2">Entregables al cierre de la sesión (Parte 1 de 2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criterios-de-evaluacion-rapidos">Criterios de evaluación rápidos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice-formulas-utiles-y-tips">Apéndice: fórmulas útiles y tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siguientes-pasos">Siguientes Pasos</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gina Buvoli
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

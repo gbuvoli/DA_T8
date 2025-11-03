@@ -1,0 +1,940 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min) &#8212; Bootcamp Classes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Sprint2_Webinar03_Teorico';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min)" href="Sprint2_Webinar04_Practico.html" />
+    <link rel="prev" title="SPRINT 2: BIENVENIDO" href="sp2_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/t10logo.png" class="logo__image only-light" alt="Bootcamp Classes - Home"/>
+    <script>document.write(`<img src="_static/t10logo.png" class="logo__image only-dark" alt="Bootcamp Classes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al mundo de la Analítica de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Sp0_postonboarding.html">Sesión 0 — Introducción y Bienvenida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sp1_teo.html">Sprint 1 - Introducción a tu futura profesión</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sp2_intro.html">SPRINT 2: BIENVENIDO</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min)</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="Sprint2_Webinar04_Practico.html">Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min)</a></li>
+
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSprint2_Webinar03_Teorico.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Sprint2_Webinar03_Teorico.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda-85-min">Agenda (85 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-docente">0. Setup (Docente)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-questions-in-a-business-context-10-25-min">1) Analytical Questions in a Business Context (10 + 25 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#framing-data-questions-from-business-needs-5-min">1.1 Framing Data Questions from Business Needs (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-business-questions-with-the-right-metrics-10-min">1.2 Matching Business Questions with the Right Metrics (10 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leading-vs-lagging-indicators-5-min">1.3 Leading vs. Lagging Indicators (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-focused-analysis-questions-3-min">1.4 Writing Focused Analysis Questions (3 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-using-an-llm-for-stakeholder-metrics-2-min">1.5 🤖 AI: Using an LLM for stakeholder &amp; metrics (2 min)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-and-exploring-the-dataset-25-min">2) Preparing and Exploring the Dataset (25 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-exploring-a-new-dataset-5-min">2.1 Importing and Exploring a New Dataset (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-two-related-datasets-8-min">2.2 Combining Two Related Datasets (8 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-the-spreadsheet-for-analysis-5-min">2.3 Organizing the Spreadsheet for Analysis (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-categorical-data-for-grouping-5-min">2.4 Preparing Categorical Data for Grouping (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-para-formulas-errores-2-min">2.5 🤖 AI para fórmulas &amp; errores (2 min)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summarizing-data-with-functions-and-filters-rafagas-guiadas">3) Summarizing Data with Functions and Filters (ráfagas guiadas)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-exploring-patterns">3.1 Filtering and Exploring Patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-aggregation-functions">3.2 Conditional Aggregation Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-segments-with-multiple-conditions">3.3 Comparing Segments with Multiple Conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-summary-sheets-for-key-metrics">3.4 Creating Summary Sheets for Key Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minicaso-de-cierre-1520-min">4) Mini‑Caso de Cierre (15–20 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice-tips-de-clase-soluciones-guia-para-el-tutor">Apéndice: Tips de clase / Soluciones guía (para el Tutor)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siguientes-pasos">Siguientes Pasos</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sprint-2-webinar-3-formulacion-de-preguntas-de-negocio-y-preparacion-de-datos-en-excel-sheets-80-min">
+<h1>Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min)<a class="headerlink" href="#sprint-2-webinar-3-formulacion-de-preguntas-de-negocio-y-preparacion-de-datos-en-excel-sheets-80-min" title="Link to this heading">#</a></h1>
+<p><strong>Fecha de creación:</strong> 2025-09-14 01:18<br />
+<strong>Dataset base:</strong> <code class="docutils literal notranslate"><span class="pre">almacen_ventas.xlsx</span></code></p>
+<hr class="docutils" />
+<section id="objetivos-de-aprendizaje">
+<h2>Objetivos de Aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Traducir escenarios de negocio en <strong>preguntas analíticas claras</strong> y <strong>métricas</strong> medibles.</p></li>
+<li><p>Diferenciar métricas <strong>absolutas</strong> vs <strong>relativas</strong> e identificar <strong>KPI/OKR</strong> y <em>guardrail metrics</em>.</p></li>
+<li><p>Distinguir <strong>leading</strong> vs <strong>lagging indicators</strong> y redactar preguntas enfocadas.</p></li>
+<li><p><strong>Preparar</strong> y <strong>combinar</strong> datasets (XLOOKUP/VLOOKUP), aplicar limpieza categórica (TRIM/PROPER/CLEAN).</p></li>
+<li><p>Resumir datos con <strong>SUMIF/SUMIFS/COUNTIF/AVERAGEIF</strong> y organizar un libro “analysis‑ready”.</p></li>
+<li><p>Apoyarse de un <strong>LLM</strong> para refinar stakeholders, métricas y fórmulas (usándolo con criterio).</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Tiempo total:</strong> 85 minutos — pensado para trabajar sobre <code class="docutils literal notranslate"><span class="pre">almacen_ventas.xlsx</span></code>.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="agenda-85-min">
+<h2>Agenda (85 min)<a class="headerlink" href="#agenda-85-min" title="Link to this heading">#</a></h2>
+<p><strong>Introducción al contexto analítico (10 min)</strong></p>
+<ul class="simple">
+<li><p>(Opcional) Kahoot de activación: 3-4 preguntas rápidas para diagnosticar conocimientos previos.</p></li>
+</ul>
+<p><strong>Preguntas de negocio y métricas (25 min)</strong></p>
+<p><strong>Preparación y exploración del dataset (25 min)</strong></p>
+<p><strong>Resumen y ejercicios de cierre (20 min)</strong></p>
+<p><strong>Kahoot de repaso (5 min):</strong></p>
+<ul class="simple">
+<li><p>Validar aprendizajes clave de la sesión.</p></li>
+<li><p>Q&amp;A y próximos pasos.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="setup-docente">
+<h2>0. Setup (Docente)<a class="headerlink" href="#setup-docente" title="Link to this heading">#</a></h2>
+<p>Antes de iniciar, asegúrate de tener el archivo <strong><code class="docutils literal notranslate"><span class="pre">almacen_ventas.xlsx</span></code></strong> en tu equipo.<br />
+Si estás usando este notebook en local (con Python), la siguiente celda demuestra cómo leerlo con <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.
+Si trabajas en <strong>Excel/Google Sheets</strong>, simplemente abre el archivo y sigue las instrucciones en las hojas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># (Opcional para docente) Cargar datos con pandas si deseas mostrar ejemplos en Python</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">xlsx_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;/mnt/data/almacen_ventas.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># ajusta la ruta si tu archivo está en otra ubicación</span>
+<span class="k">assert</span> <span class="n">xlsx_path</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="s2">&quot;No se encuentra el archivo almacen_ventas.xlsx en la ruta especificada.&quot;</span>
+
+<span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">xlsx_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Raw Data&#39;</span><span class="p">)</span>
+<span class="n">customers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">xlsx_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Customers&#39;</span><span class="p">)</span>
+<span class="n">readme</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">xlsx_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;README&#39;</span><span class="p">)</span>
+
+<span class="n">raw</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">customers</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">xlsx_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;/mnt/data/almacen_ventas.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># ajusta la ruta si tu archivo está en otra ubicación</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">assert</span> <span class="n">xlsx_path</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="s2">&quot;No se encuentra el archivo almacen_ventas.xlsx en la ruta especificada.&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">xlsx_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Raw Data&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">customers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">xlsx_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Customers&#39;</span><span class="p">)</span>
+
+<span class="ne">AssertionError</span>: No se encuentra el archivo almacen_ventas.xlsx en la ruta especificada.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="analytical-questions-in-a-business-context-10-25-min">
+<h1>1) Analytical Questions in a Business Context (10 + 25 min)<a class="headerlink" href="#analytical-questions-in-a-business-context-10-25-min" title="Link to this heading">#</a></h1>
+<section id="framing-data-questions-from-business-needs-5-min">
+<h2>1.1 Framing Data Questions from Business Needs (5 min)<a class="headerlink" href="#framing-data-questions-from-business-needs-5-min" title="Link to this heading">#</a></h2>
+<p><strong>Idea clave:</strong> convertir necesidades del negocio en preguntas analíticas claras.</p>
+<ul class="simple">
+<li><p>Identifica <strong>stakeholders</strong> (quién decide).</p></li>
+<li><p>Explicita la <strong>decisión</strong> a tomar y el <strong>horizonte temporal</strong>.</p></li>
+<li><p>Revisa <strong>campos disponibles</strong> del dataset y mapea cómo responden preguntas.</p></li>
+</ul>
+<p><strong>Ejemplos rápidos (para discutir en clase):</strong></p>
+<ul class="simple">
+<li><p>Stakeholder: Gerente de Ventas → Decisión: reasignar presupuesto regional trimestral → Dataset: <code class="docutils literal notranslate"><span class="pre">Date,</span> <span class="pre">Region,</span> <span class="pre">Total_Sales</span></code>.</p></li>
+<li><p>Stakeholder: Marketing → Decisión: campaña por producto → Dataset: <code class="docutils literal notranslate"><span class="pre">Product,</span> <span class="pre">Units_Sold,</span> <span class="pre">Region</span></code>.</p></li>
+</ul>
+<p><strong>Ejercicio 1 (5 min, en parejas):</strong>
+Para cada mini-escenario, escribe:</p>
+<ol class="arabic simple">
+<li><p>Stakeholder</p></li>
+<li><p>Pregunta clave (1 línea, clara)</p></li>
+<li><p>Campos del dataset que usarías</p></li>
+</ol>
+<p>a) “Necesito saber qué producto impulsar en el próximo mes en la región West.”<br />
+b) “Quiero entender el desempeño mensual por vendedor.”<br />
+c) “¿Qué categoría sostiene el crecimiento del trimestre?”</p>
+</section>
+<section id="matching-business-questions-with-the-right-metrics-10-min">
+<h2>1.2 Matching Business Questions with the Right Metrics (10 min)<a class="headerlink" href="#matching-business-questions-with-the-right-metrics-10-min" title="Link to this heading">#</a></h2>
+<p><strong>Métricas básicas:</strong> total (SUM), promedio (AVERAGE), crecimiento % (MoM/YoY), razones/ratios, varianza, percentiles.<br />
+<strong>KPI vs OKR:</strong> KPI mide desempeño continuo; OKR formula objetivos + resultados clave.<br />
+<strong>Guardrail metrics:</strong> métricas de seguridad para evitar impactos indeseados (p.ej., churn, NPS).<br />
+<strong>Absolutas vs relativas:</strong> totales vs tasas/porcentajes.</p>
+<p><strong>Ejercicio 2 (10 min, en Excel/Sheets):</strong>
+En <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span></code> crear columna <code class="docutils literal notranslate"><span class="pre">Month</span></code>:</p>
+<ul class="simple">
+<li><p>Excel: <code class="docutils literal notranslate"><span class="pre">=TEXT([&#64;Date],&quot;mmm-yyyy&quot;)</span></code>  (o usar <strong>Power Query</strong> si prefieres)</p></li>
+<li><p>Sheets: <code class="docutils literal notranslate"><span class="pre">=TEXT(A2,&quot;mmm-yyyy&quot;)</span></code></p></li>
+</ul>
+<p>Responde con fórmulas (no Pivot, por ahora):</p>
+<ol class="arabic simple">
+<li><p><strong>Total de ventas por producto</strong> (usa <code class="docutils literal notranslate"><span class="pre">SUMIF</span></code> o <code class="docutils literal notranslate"><span class="pre">SUMIFS</span></code>)</p></li>
+<li><p><strong>Promedio de ventas por región</strong> (<code class="docutils literal notranslate"><span class="pre">AVERAGEIF</span></code>)</p></li>
+<li><p><strong>Crecimiento % Mes a Mes</strong> de <em>Total_Sales</em>:</p>
+<ul class="simple">
+<li><p>Construye una tabla de Ventas por <code class="docutils literal notranslate"><span class="pre">Month</span></code></p></li>
+<li><p>Fórmula de crecimiento: <code class="docutils literal notranslate"><span class="pre">(MesActual</span> <span class="pre">-</span> <span class="pre">MesAnterior)</span> <span class="pre">/</span> <span class="pre">MesAnterior</span></code></p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p>Deja las fórmulas visibles y nombra los rangos para facilitar su lectura.</p>
+</div></blockquote>
+</section>
+<section id="leading-vs-lagging-indicators-5-min">
+<h2>1.3 Leading vs. Lagging Indicators (5 min)<a class="headerlink" href="#leading-vs-lagging-indicators-5-min" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Leading</strong> (anticipan): visitas al sitio, leads, unidades vendidas, cotizaciones.</p></li>
+<li><p><strong>Lagging</strong> (confirman): ingresos, margen, utilidad, ventas cerradas.</p></li>
+</ul>
+<p><strong>Ejercicio 3 (3–5 min):</strong>
+En una tabla de dos columnas, clasifica como <em>Leading</em> o <em>Lagging</em> los campos de <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Units_Sold</span></code> →</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Total_Sales</span></code> →</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Date</span></code> (cuando mide período consolidado) →</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Region</span></code> (no es métrica, es dimensión, ¿cómo la usarías para indicadores?) →</p></li>
+</ul>
+<p>Justifica brevemente en 1 oración por campo.</p>
+</section>
+<section id="writing-focused-analysis-questions-3-min">
+<h2>1.4 Writing Focused Analysis Questions (3 min)<a class="headerlink" href="#writing-focused-analysis-questions-3-min" title="Link to this heading">#</a></h2>
+<p>Estructura: <strong>[Métrica] para [grupo/segmento] en [tiempo]</strong>.</p>
+<ul class="simple">
+<li><p>Vago: “¿Cómo vamos en ventas?”</p></li>
+<li><p>Enfocado: “<strong>Total_Sales</strong> por <strong>Product</strong> en <strong>West</strong> durante <strong>jun-2024</strong> (comparado con may-2024).”</p></li>
+</ul>
+<p><strong>Ejercicio 4 (5 min):</strong> Reescribe 3–5 preguntas vagas a formato listo para Pivot/función:</p>
+<ol class="arabic simple">
+<li><p>“Quiero saber qué tan bien vende Sofía.”</p></li>
+<li><p>“Quiero entender a los clientes.”</p></li>
+<li><p>“¿Qué región es la mejor?”</p></li>
+</ol>
+</section>
+<section id="ai-using-an-llm-for-stakeholder-metrics-2-min">
+<h2>1.5 🤖 AI: Using an LLM for stakeholder &amp; metrics (2 min)<a class="headerlink" href="#ai-using-an-llm-for-stakeholder-metrics-2-min" title="Link to this heading">#</a></h2>
+<p>Prompt sugerido (copiar/pegar en tu LLM favorito):</p>
+<blockquote>
+<div><p><em>Tengo un dataset con columnas Date, Region, Product, Units_Sold, Unit_Price, Salesperson, Total_Sales. Soy el Gerente de Ventas. Necesito priorizar presupuesto por región para el próximo trimestre. Sugiere: (1) objetivo y pregunta clave, (2) métricas y cálculos (incluye crecimiento y tasas), (3) qué tablas/resúmenes construirías para decidir.</em></p>
+</div></blockquote>
+<p><strong>Discusión:</strong> ¿Qué aceptarías del LLM? ¿Qué validarías manualmente?</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="preparing-and-exploring-the-dataset-25-min">
+<h1>2) Preparing and Exploring the Dataset (25 min)<a class="headerlink" href="#preparing-and-exploring-the-dataset-25-min" title="Link to this heading">#</a></h1>
+<section id="importing-and-exploring-a-new-dataset-5-min">
+<h2>2.1 Importing and Exploring a New Dataset (5 min)<a class="headerlink" href="#importing-and-exploring-a-new-dataset-5-min" title="Link to this heading">#</a></h2>
+<p>Abrir hoja <strong>Customers</strong> y revisar:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Customer_ID</span></code>, <code class="docutils literal notranslate"><span class="pre">Region</span></code>, <code class="docutils literal notranslate"><span class="pre">Customer_Type</span></code> (Retail/Wholesale)</p></li>
+<li><p>¿Cómo podría relacionarse con <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span></code>?</p></li>
+</ul>
+<p><strong>Ejercicio 5 (5 min):</strong> Lista 3–4 posibles conexiones entre hojas:</p>
+<ul class="simple">
+<li><p>Por <code class="docutils literal notranslate"><span class="pre">Region</span></code></p></li>
+<li><p>Por (futuro) <code class="docutils literal notranslate"><span class="pre">Customer_ID</span></code> en ventas</p></li>
+<li><p>Por <code class="docutils literal notranslate"><span class="pre">Month</span></code> a nivel de segmentación comercial</p></li>
+<li><p>Por <code class="docutils literal notranslate"><span class="pre">Customer_Type</span></code> para analizar mix Retail vs Wholesale</p></li>
+</ul>
+</section>
+<section id="combining-two-related-datasets-8-min">
+<h2>2.2 Combining Two Related Datasets (8 min)<a class="headerlink" href="#combining-two-related-datasets-8-min" title="Link to this heading">#</a></h2>
+<p><strong>Lookup exacto</strong> vs aproximado. Lookup tables (dimensiones) vs tablas transaccionales.</p>
+<p><strong>Paso a paso con <code class="docutils literal notranslate"><span class="pre">XLOOKUP</span></code> (o <code class="docutils literal notranslate"><span class="pre">VLOOKUP</span></code>):</strong></p>
+<ol class="arabic simple">
+<li><p>En <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span></code>, inserta columna <code class="docutils literal notranslate"><span class="pre">Customer_Type</span></code> (o <code class="docutils literal notranslate"><span class="pre">Region_Type</span></code> si prefieres).</p></li>
+<li><p>Fórmula (ejemplo por <code class="docutils literal notranslate"><span class="pre">Region</span></code>):</p>
+<ul class="simple">
+<li><p>Excel: <code class="docutils literal notranslate"><span class="pre">=XLOOKUP([&#64;Region],Customers!B:B,Customers!C:C,&quot;NoMatch&quot;,0)</span></code></p></li>
+<li><p>Sheets (XLOOKUP): <code class="docutils literal notranslate"><span class="pre">=XLOOKUP(C2,Customers!B:B,Customers!C:C,&quot;NoMatch&quot;,0)</span></code></p></li>
+<li><p>o VLOOKUP (asumiendo tabla ordenada): <code class="docutils literal notranslate"><span class="pre">=VLOOKUP(C2,Customers!B:C,2,FALSE)</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Verificación y troubleshooting:</strong></p>
+<ul class="simple">
+<li><p>Cuenta matches: crea un conteo de <code class="docutils literal notranslate"><span class="pre">#N/A</span></code> con <code class="docutils literal notranslate"><span class="pre">=COUNTIF(Rango,&quot;#N/A&quot;)</span></code></p></li>
+<li><p>Duplica: usa <code class="docutils literal notranslate"><span class="pre">Quitar</span> <span class="pre">duplicados</span></code> o conditional formatting</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Ejercicio 6 (8–10 min):</strong></p>
+<ul class="simple">
+<li><p>Haz el <em>perfect match</em> primero (sin errores).</p></li>
+<li><p>Luego introduce un error tipográfico (“Nort” por “North”) y observa <code class="docutils literal notranslate"><span class="pre">#N/A</span></code>.</p></li>
+<li><p>Documenta en una hoja “JOIN_DOC”:</p>
+<ul>
+<li><p>supuestos del join (clave, cardinalidad, exactitud)</p></li>
+<li><p>limitaciones detectadas (errores, duplicados)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="organizing-the-spreadsheet-for-analysis-5-min">
+<h2>2.3 Organizing the Spreadsheet for Analysis (5 min)<a class="headerlink" href="#organizing-the-spreadsheet-for-analysis-5-min" title="Link to this heading">#</a></h2>
+<p>Buenas prácticas:</p>
+<ul class="simple">
+<li><p>Renombrar y color‑code tabs (Datos, Dimensiones, Resúmenes, README).</p></li>
+<li><p>Congelar encabezados, ajustar anchos, formato de miles y porcentajes.</p></li>
+<li><p><strong>Declarative names</strong> en columnas: <code class="docutils literal notranslate"><span class="pre">Total_Sales</span></code>, <code class="docutils literal notranslate"><span class="pre">Units_Sold</span></code> (evitar “col1”).</p></li>
+<li><p>Validación de datos para <code class="docutils literal notranslate"><span class="pre">Region</span></code> ∈ {North, South, East, West}.</p></li>
+<li><p><strong>Helper columns</strong>: <code class="docutils literal notranslate"><span class="pre">Month</span></code>, <code class="docutils literal notranslate"><span class="pre">Quarter</span></code>, <code class="docutils literal notranslate"><span class="pre">Product_Category</span></code> (si aplica).</p></li>
+</ul>
+<p><strong>Ejercicio 7 (5 min):</strong></p>
+<ul class="simple">
+<li><p>Renombra: <code class="docutils literal notranslate"><span class="pre">Sales_Raw</span></code>, <code class="docutils literal notranslate"><span class="pre">Customers</span></code>, <code class="docutils literal notranslate"><span class="pre">README</span></code>, <code class="docutils literal notranslate"><span class="pre">Cleaned_Data</span></code>, <code class="docutils literal notranslate"><span class="pre">Summary</span></code>.</p></li>
+<li><p>Crea validaciones (listas) para <code class="docutils literal notranslate"><span class="pre">Region</span></code> y <code class="docutils literal notranslate"><span class="pre">Product</span></code>.</p></li>
+<li><p>En <code class="docutils literal notranslate"><span class="pre">README</span></code>, documenta la estructura, pestañas y convenciones.</p></li>
+</ul>
+</section>
+<section id="preparing-categorical-data-for-grouping-5-min">
+<h2>2.4 Preparing Categorical Data for Grouping (5 min)<a class="headerlink" href="#preparing-categorical-data-for-grouping-5-min" title="Link to this heading">#</a></h2>
+<p><strong>Limpieza en hoja <code class="docutils literal notranslate"><span class="pre">Cleaned_Data</span></code></strong> referenciando <code class="docutils literal notranslate"><span class="pre">Sales_Raw</span></code> (no copiar/pegar manual):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">=TRIM(Sales_Raw!B2)</span></code> elimina espacios extra</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=PROPER(Sales_Raw!C2)</span></code> capitaliza</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=CLEAN(...)</span></code> remueve caracteres no imprimibles</p></li>
+<li><p>Plantilla de chequeo: <code class="docutils literal notranslate"><span class="pre">=IF(ISBLANK(A2),&quot;Missing&quot;,&quot;OK&quot;)</span></code></p></li>
+</ul>
+<p><strong>Ejercicio 8 (5 min):</strong></p>
+<ul class="simple">
+<li><p>Implementa una plantilla de limpieza con columnas: <code class="docutils literal notranslate"><span class="pre">Original</span></code>, <code class="docutils literal notranslate"><span class="pre">Trimmed</span></code>, <code class="docutils literal notranslate"><span class="pre">Proper</span></code>, <code class="docutils literal notranslate"><span class="pre">Check</span></code></p></li>
+<li><p>Añade una columna <strong><code class="docutils literal notranslate"><span class="pre">Issue_Flag</span></code></strong> con reglas: si <code class="docutils literal notranslate"><span class="pre">Region</span></code> no está en la lista válida → “Invalid Region”.</p></li>
+<li><p>Guarda esta hoja como <strong>plantilla reutilizable</strong>.</p></li>
+</ul>
+</section>
+<section id="ai-para-formulas-errores-2-min">
+<h2>2.5 🤖 AI para fórmulas &amp; errores (2 min)<a class="headerlink" href="#ai-para-formulas-errores-2-min" title="Link to this heading">#</a></h2>
+<p>Ejemplo de prompt (para depurar fórmulas):</p>
+<blockquote>
+<div><p><em>Tengo esta fórmula que devuelve #N/A/ERROR en Excel/Sheets: =XLOOKUP(C2,Customers!B:B,Customers!C:C). Mi objetivo es traer Customer_Type por Region. ¿Qué revisaría y cómo la reescribirías? Dame 2 alternativas y cómo validar el resultado.</em></p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="summarizing-data-with-functions-and-filters-rafagas-guiadas">
+<h1>3) Summarizing Data with Functions and Filters (ráfagas guiadas)<a class="headerlink" href="#summarizing-data-with-functions-and-filters-rafagas-guiadas" title="Link to this heading">#</a></h1>
+<section id="filtering-and-exploring-patterns">
+<h2>3.1 Filtering and Exploring Patterns<a class="headerlink" href="#filtering-and-exploring-patterns" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Usa filtros combinados (por <code class="docutils literal notranslate"><span class="pre">Region</span></code> y <code class="docutils literal notranslate"><span class="pre">Month</span></code>) para aislar subconjuntos.</p></li>
+<li><p>Identifica patrones visuales rápidos (colores/heatmap, barras in-cell).</p></li>
+</ul>
+<p><strong>Ejercicio 9 (5 min):</strong>
+Filtra un mes específico y responde:<br />
+“¿Qué <strong>Product</strong> tuvo mayor <code class="docutils literal notranslate"><span class="pre">Total_Sales</span></code> en <strong>South</strong>?”</p>
+</section>
+<section id="conditional-aggregation-functions">
+<h2>3.2 Conditional Aggregation Functions<a class="headerlink" href="#conditional-aggregation-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUMIF/COUNTIF/AVERAGEIF</span></code> (1 condición) vs <code class="docutils literal notranslate"><span class="pre">SUMIFS/COUNTIFS/AVERAGEIFS</span></code> (multi-condición).</p></li>
+<li><p>Usa referencias absolutas/relativas con intención (F4 en Excel).</p></li>
+</ul>
+<p><strong>Ejercicio 10 (8 min):</strong></p>
+<ul class="simple">
+<li><p>Total de ventas por <strong>Region</strong> con <code class="docutils literal notranslate"><span class="pre">SUMIF</span></code></p></li>
+<li><p>Promedio de <code class="docutils literal notranslate"><span class="pre">Units_Sold</span></code> por <strong>Product</strong> con <code class="docutils literal notranslate"><span class="pre">AVERAGEIF</span></code></p></li>
+<li><p>Resalta duplicados y outliers con <strong>formato condicional</strong> (reglas &gt; umbral)</p></li>
+</ul>
+</section>
+<section id="comparing-segments-with-multiple-conditions">
+<h2>3.3 Comparing Segments with Multiple Conditions<a class="headerlink" href="#comparing-segments-with-multiple-conditions" title="Link to this heading">#</a></h2>
+<p>Construye una tabla de resumen usando <code class="docutils literal notranslate"><span class="pre">SUMIFS</span></code> por <code class="docutils literal notranslate"><span class="pre">Month</span></code> y dos regiones (ej. West vs East).</p>
+<p><strong>Ejercicio 11 (7–8 min):</strong>
+Tabla: filas = <code class="docutils literal notranslate"><span class="pre">Month</span></code>; columnas = <code class="docutils literal notranslate"><span class="pre">West</span></code>, <code class="docutils literal notranslate"><span class="pre">East</span></code>; valores = <code class="docutils literal notranslate"><span class="pre">SUMIFS(Total_Sales,</span> <span class="pre">Region,</span> <span class="pre">&quot;West&quot;,</span> <span class="pre">Month,</span> <span class="pre">[Mes])</span></code> …<br />
+<strong>Pregunta:</strong> ¿Cuál región crece más en el último trimestre?</p>
+</section>
+<section id="creating-summary-sheets-for-key-metrics">
+<h2>3.4 Creating Summary Sheets for Key Metrics<a class="headerlink" href="#creating-summary-sheets-for-key-metrics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Hoja <code class="docutils literal notranslate"><span class="pre">Summary</span></code>: KPIs (3), tabla breve y 1 mini‑gráfico.</p></li>
+<li><p>Ajusta para la audiencia (equipo vs C‑level): pocos números, limpia y clara.</p></li>
+</ul>
+<p><strong>Ejercicio 12 (7–8 min):</strong></p>
+<ul class="simple">
+<li><p>KPIs sugeridos: <strong>Ventas totales</strong>, <strong>Ticket promedio</strong> (Total_Sales/Units_Sold), <strong>% crecimiento último mes</strong>.</p></li>
+<li><p>1 gráfico: columnas apiladas por <code class="docutils literal notranslate"><span class="pre">Month</span></code> y <code class="docutils literal notranslate"><span class="pre">Region</span></code> o por <code class="docutils literal notranslate"><span class="pre">Product</span></code> top‑N.</p></li>
+<li><p>Escribe 2 bullets de insight (contexto → hallazgo → implicación).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="minicaso-de-cierre-1520-min">
+<h2>4) Mini‑Caso de Cierre (15–20 min)<a class="headerlink" href="#minicaso-de-cierre-1520-min" title="Link to this heading">#</a></h2>
+<p><strong>Stakeholder:</strong> CEO<br />
+<strong>Pregunta:</strong> ¿Cómo evolucionaron las ventas de <em>Laptop</em> y <em>Smartphone</em> en el último trimestre por región?</p>
+<p><strong>Tareas:</strong></p>
+<ol class="arabic simple">
+<li><p>Asegura columna <code class="docutils literal notranslate"><span class="pre">Month</span></code> correcta.</p></li>
+<li><p>Calcula <code class="docutils literal notranslate"><span class="pre">Total_Sales</span></code> por <code class="docutils literal notranslate"><span class="pre">Month</span></code>, <code class="docutils literal notranslate"><span class="pre">Region</span></code>, <code class="docutils literal notranslate"><span class="pre">Product</span></code> (filtro en Laptop/Smartphone).</p></li>
+<li><p>Crea gráfico comparativo.</p></li>
+<li><p>Redacta <strong>2–3 insights</strong> útiles para decisión de presupuesto.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Entrega sugerida:</strong> hoja <code class="docutils literal notranslate"><span class="pre">Summary</span></code> con KPIs, tabla, gráfico y sección “Insights”.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="apendice-tips-de-clase-soluciones-guia-para-el-tutor">
+<h2>Apéndice: Tips de clase / Soluciones guía (para el Tutor)<a class="headerlink" href="#apendice-tips-de-clase-soluciones-guia-para-el-tutor" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Verifica que el <code class="docutils literal notranslate"><span class="pre">XLOOKUP</span></code> tenga coincidencia exacta (0/FALSE) y que no haya espacios ocultos → usa <code class="docutils literal notranslate"><span class="pre">TRIM()</span></code> en origen y destino.</p></li>
+<li><p>Para crecimiento <strong>MoM</strong>: ordena los meses cronológicamente (usa una columna <code class="docutils literal notranslate"><span class="pre">Month_Key</span> <span class="pre">=</span> <span class="pre">YEAR*100+MONTH</span></code>).</p></li>
+<li><p>Usa <strong>nombre de rangos</strong> o <strong>Tablas</strong> en Excel para fórmulas legibles (<code class="docutils literal notranslate"><span class="pre">TablaVentas[Total_Sales]</span></code>).</p></li>
+<li><p>Si el dataset tiene pocos meses, explica diferencia entre <strong>tasa de crecimiento</strong> y <strong>variación absoluta</strong>.</p></li>
+<li><p><strong>Leading vs Lagging</strong>: valida con ejemplos del propio negocio de los estudiantes para afianzar.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="cierre">
+<h2>Cierre<a class="headerlink" href="#cierre" title="Link to this heading">#</a></h2>
+<p><strong>Kahoot de repaso (5 min):</strong></p>
+<ul class="simple">
+<li><p>Validar aprendizajes clave de la sesión.</p></li>
+<li><p>Q&amp;A y próximos pasos.</p></li>
+</ul>
+</section>
+<section id="siguientes-pasos">
+<h2>Siguientes Pasos<a class="headerlink" href="#siguientes-pasos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Próxima sesión:</strong> profundizaremos en el ecosistema de datos y en el flujo de punta a punta.</p></li>
+<li><p><strong>Participación continua:</strong> asistir a Co-Learning y a Sprint Focus, y usar los canales de Discord para hacer preguntas.</p></li>
+<li><p><strong>Recordatorios:</strong> la grabación y recursos utilizados, se comparten al finalizar la sesión; en caso de necesitar apoyo adicional, agenda un 1:1.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sp2_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SPRINT 2: BIENVENIDO</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Sprint2_Webinar04_Practico.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sprint 2 - Webinar 4: Walmart Project — Limpieza, Enriquecimiento y Resumen con KPIs (80 min)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sprint 2 - Webinar 3: Formulación de Preguntas de Negocio y Preparación de Datos en Excel/Sheets (80 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda-85-min">Agenda (85 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-docente">0. Setup (Docente)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-questions-in-a-business-context-10-25-min">1) Analytical Questions in a Business Context (10 + 25 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#framing-data-questions-from-business-needs-5-min">1.1 Framing Data Questions from Business Needs (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-business-questions-with-the-right-metrics-10-min">1.2 Matching Business Questions with the Right Metrics (10 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leading-vs-lagging-indicators-5-min">1.3 Leading vs. Lagging Indicators (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-focused-analysis-questions-3-min">1.4 Writing Focused Analysis Questions (3 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-using-an-llm-for-stakeholder-metrics-2-min">1.5 🤖 AI: Using an LLM for stakeholder &amp; metrics (2 min)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-and-exploring-the-dataset-25-min">2) Preparing and Exploring the Dataset (25 min)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-exploring-a-new-dataset-5-min">2.1 Importing and Exploring a New Dataset (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-two-related-datasets-8-min">2.2 Combining Two Related Datasets (8 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-the-spreadsheet-for-analysis-5-min">2.3 Organizing the Spreadsheet for Analysis (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-categorical-data-for-grouping-5-min">2.4 Preparing Categorical Data for Grouping (5 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-para-formulas-errores-2-min">2.5 🤖 AI para fórmulas &amp; errores (2 min)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summarizing-data-with-functions-and-filters-rafagas-guiadas">3) Summarizing Data with Functions and Filters (ráfagas guiadas)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-exploring-patterns">3.1 Filtering and Exploring Patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-aggregation-functions">3.2 Conditional Aggregation Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-segments-with-multiple-conditions">3.3 Comparing Segments with Multiple Conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-summary-sheets-for-key-metrics">3.4 Creating Summary Sheets for Key Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minicaso-de-cierre-1520-min">4) Mini‑Caso de Cierre (15–20 min)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice-tips-de-clase-soluciones-guia-para-el-tutor">Apéndice: Tips de clase / Soluciones guía (para el Tutor)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siguientes-pasos">Siguientes Pasos</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gina Buvoli
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
