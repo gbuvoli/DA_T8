@@ -6,4 +6,8 @@ root: intro
 chapters:
   - file: Sp0_postonboarding
   - file: sp1_teo
+  - file: sp2_intro
+    sections:
+      - file: Sprint2_Webinar03_Teorico
+      - file: Sprint2_Webinar04_Practico
 
