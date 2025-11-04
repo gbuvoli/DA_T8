@@ -1,34 +1,43 @@
-name: Deploy Jupyter Book
-
+# .github/workflows/pages.yml
+name: Build & Deploy Jupyter Book
 on:
-  push:
-    branches: [main]
+  push: { branches: [main] }
   workflow_dispatch:
 
-permissions:
-  contents: write
-
-concurrency:
-  group: "jupyter-book"
-  cancel-in-progress: true
-
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
-      - name: Install deps
+      - name: Install Jupyter Book
         run: |
-          python -m pip install -U pip
-          pip install -U jupyter-book ghp-import
+          python -m pip install --upgrade pip
+          pip install "jupyter-book==1.*"  # fija versión estable
+          # Extensiones comunes, opcional:
+          # pip install myst-parser sphinx-external-toc sphinx-copybutton
 
       - name: Build book
         run: jb build .
 
-      - name: Deploy to gh-pages
-        run: ghp-import -n -p -f _build/html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_build/html
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
