@@ -8,6 +8,6 @@ chapters:
   - file: sp1_teo
   - file: sp2_intro
     sections:
-      - file: Sprint2_Webinar03_Teorico
-      - file: Sprint2_Webinar04_Practico
+      - file: Sprint2_semana1
+      - file: Sprint2_semana2
 
