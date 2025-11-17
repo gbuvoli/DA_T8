@@ -12,9 +12,10 @@ chapters:
     sections:
       - file: Sprint2_semana1
       - file: Sprint2_semana2
-  - file: sp3_intro
+    title: Sprint 3 — Análisis de KPIs Financieros con SQL
     sections:
       - file: Sprint3_semana1
       - file: Sprint3_semana2
+    
 
 
