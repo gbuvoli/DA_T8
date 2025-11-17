@@ -3,7 +3,7 @@
 
 title: Bootcamp Classes
 author: Gina Buvoli
-logo: t10logo.png
+logo: images/t10logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
