@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semana 2: PivotTables, Métricas y Visualizaciones &#8212; Bootcamp Classes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Sprint2_semana2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sprint 3: Explorar KPIs con SQL" href="sp3_intro.html" />
+    <link rel="prev" title="Semana 1: Preguntas de Negocio y Preparación de Datos" href="Sprint2_semana1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/t10logo.png" class="logo__image only-light" alt="Bootcamp Classes - Home"/>
+    <script>document.write(`<img src="_static/t10logo.png" class="logo__image only-dark" alt="Bootcamp Classes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al mundo de la Analítica de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Sp0_postonboarding.html">Sesión 0 — Introducción y Bienvenida</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sp1_intro.html">Sprint 1: Introducción a tu futura profesión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sp1_teo.html">Sprint 1 - Introducción a tu futura profesión</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sp2_intro.html">Sprint 2: Transformar datos para insights de negocio</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Sprint2_semana1.html">Semana 1: Preguntas de Negocio y Preparación de Datos</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Semana 2: PivotTables, Métricas  y Visualizaciones</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sp3_intro.html">Sprint 3: Explorar KPIs con SQL</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Sprint3_semana1.html">Sprint 3 : Explorar KPIs con SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sprint3_semana2.html">Sprint 3 – Webinar 9: KPIs financieros con SQL (90 min)</a></li>
+
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSprint2_semana2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Sprint2_semana2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semana 2: PivotTables, Métricas  y Visualizaciones</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Semana 2: PivotTables, Métricas  y Visualizaciones</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analizando-datos-con-pivottables">4. Analizando datos con PivotTables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construyendo-tu-primera-pivottable">Construyendo tu primera PivotTable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-y-orden-dentro-de-la-pivottable">4.2 Filtrado y orden dentro de la PivotTable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-informacion-con-multiples-metricas">4.3 Resumen de información con múltiples métricas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refinando-el-layout-e-interpretando-resultados">4.4 Refinando el layout e interpretando resultados</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-visuales-y-narrativa">5. Resultados visuales y narrativa</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-grafico-correcto-para-cada-analisis">5.1 El gráfico correcto para cada análisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formato-condicional-para-resaltar">5.2  Formato condicional para resaltar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-practica">Actividad práctica:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-dashboard-de-resumen">5.3 Mini dashboard de resumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#narrativa-ejecutiva">5.4  Narrativa ejecutiva</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-y-buenas-practicas">Tips y buenas prácticas</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semana-2-pivottables-metricas-y-visualizaciones">
+<h1>Semana 2: PivotTables, Métricas  y Visualizaciones<a class="headerlink" href="#semana-2-pivottables-metricas-y-visualizaciones" title="Link to this heading">#</a></h1>
+<p><strong>Dataset:</strong> Continuación clase anterior: <code class="docutils literal notranslate"><span class="pre">sp2_almacen_ventas2.xlsx</span></code> (Abrir desde <a class="reference external" href="https://docs.google.com/spreadsheets/d/1lVACaFHZKNcHvbFjjeXuWpBgdah82roN/edit?usp=sharing&amp;amp;ouid=107698041790639854307&amp;amp;rtpof=true&amp;amp;sd=true">aquí</a>)</p>
+<div style="text-align: center">
+    <img src="https://raw.githubusercontent.com/ljpiere/tpdata_python/main/images/w1s1_2.png" width="400">
+</div><section id="objetivos-de-aprendizaje">
+<h2>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Construir y personalizar PivotTables para agrupar y resumir datos.</p></li>
+<li><p>Filtrar, ordenar y aplicar diferentes funciones de agregacion (SUM, COUNT, AVERAGE, MAX, MIN).</p></li>
+<li><p>Interpretar resultados y convertirlos en hallazgos para negocio.</p></li>
+<li><p>Crear gráficos apropiados y usar formato condicional para resaltar valores clave.</p></li>
+<li><p>Diseñar una pestaña-resumen tipo mini dashboard.</p></li>
+</ul>
+</section>
+<section id="agenda">
+<h2>Agenda<a class="headerlink" href="#agenda" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>PivotTables – fundamentos y primera tabla dinámica</strong></p></li>
+<li><p><strong>Filtrado y orden dentro de la PivotTable</strong></p></li>
+<li><p><strong>Cálculos y múltiples métricas</strong></p></li>
+<li><p><strong>Refinar el layout e interpretar resultados</strong></p></li>
+<li><p><strong>Gráficos correctos y narrativa</strong></p></li>
+<li><p><strong>Formato condicional para resaltar</strong></p></li>
+<li><p><strong>Mini dashboard de resumen</strong></p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analizando-datos-con-pivottables">
+<h1>4. Analizando datos con PivotTables<a class="headerlink" href="#analizando-datos-con-pivottables" title="Link to this heading">#</a></h1>
+<p><strong>Por qué importa (teoría):</strong> una tabla dinámica estima <strong>estadísticos</strong> (SUM, AVG, COUNT, %) por <strong>dimensiones</strong> (Date/Region/Product/Salesperson) para condensar transacciones en <strong>KPIs</strong>. Esto reduce dimensionalidad, facilita comparar grupos y detectar patrones/outliers—paso clave del <strong>análisis descriptivo</strong>.</p>
+<section id="construyendo-tu-primera-pivottable">
+<h2>Construyendo tu primera PivotTable<a class="headerlink" href="#construyendo-tu-primera-pivottable" title="Link to this heading">#</a></h2>
+<p><strong>Pregunta guía:</strong> <em>¿Qué <strong>Regiones</strong> y <strong>Productos</strong> explican más <strong>Total_Sales</strong>?</em></p>
+<p><strong>Paso a paso en Google Sheets:</strong></p>
+<ol class="arabic simple">
+<li><p>Enriquecer datos: duplica la hoja <strong><code class="docutils literal notranslate"><span class="pre">Raw_sales</span></code></strong>, nombrala <strong><code class="docutils literal notranslate"><span class="pre">Sales_rich</span></code></strong> y utilizando XLOOKUP añade las columnas que consideres necesarias desde <code class="docutils literal notranslate"><span class="pre">Products</span></code> y <code class="docutils literal notranslate"><span class="pre">Customers</span></code></p></li>
+<li><p>Ve a la hoja <strong><code class="docutils literal notranslate"><span class="pre">Sales_rich</span></code></strong>. Selecciona todo el rango de los datos.</p></li>
+<li><p><strong>Insertar → Tabla dinámica</strong> → <em>Nueva hoja</em>.</p></li>
+<li><p>Nombra la hoja como <strong><code class="docutils literal notranslate"><span class="pre">Analysis</span></code></strong>.</p></li>
+<li><p>En el panel de la tabla dinámica:</p>
+<ul class="simple">
+<li><p><strong>Filas</strong> → <strong>Region</strong>.</p></li>
+<li><p><strong>Columnas</strong> → <strong>Product</strong> (opcional si deseas matriz Region×Product).</p></li>
+<li><p><strong>Valores</strong> → <strong>Total_Sales</strong> como <strong>SUMA</strong>.</p></li>
+</ul>
+</li>
+<li><p>Activa <strong>Mostrar totales</strong>.</p></li>
+<li><p>QA rápido: el <strong>Total general</strong> debe coincidir con la suma de la columna <strong>Total_Sales</strong>.</p></li>
+</ol>
+</section>
+<section id="filtrado-y-orden-dentro-de-la-pivottable">
+<h2>4.2 Filtrado y orden dentro de la PivotTable<a class="headerlink" href="#filtrado-y-orden-dentro-de-la-pivottable" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo:</strong> Enfocarnos en lo relevante (tiempo/segmentos) y ordenar por contribución.</p>
+<p><strong>Paso a paso en Google Sheets:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Filtro por fecha:</strong> agrega <strong>Date</strong> a <strong>Filtros</strong> → <em>Entre</em> → selecciona un rango (p.ej., 2024-01-01 a 2024-03-31).</p></li>
+<li><p><strong>Filtro por vendedor:</strong> agrega <strong>Salesperson</strong> a <strong>Filtros</strong> si deseas excluir cuentas de prueba.</p></li>
+<li><p><strong>Ordenar:</strong> en <strong>Valores</strong>, usa el menú de tres puntos → <strong>Ordenar por SUM de Total_Sales (desc)</strong> para ver <strong>top regiones/productos</strong>.</p></li>
+</ol>
+</section>
+<section id="resumen-de-informacion-con-multiples-metricas">
+<h2>4.3 Resumen de información con múltiples métricas<a class="headerlink" href="#resumen-de-informacion-con-multiples-metricas" title="Link to this heading">#</a></h2>
+<p><strong>Preguntas guía:</strong></p>
+<ul class="simple">
+<li><p>¿Cuál es el <strong>ticket promedio</strong> (ingreso por unidad) por Region/Product?</p></li>
+<li><p>¿Qué % del total aporta cada Región?</p></li>
+</ul>
+<p><strong>Paso a paso en Google Sheets:</strong></p>
+<ol class="arabic simple">
+<li><p>En la misma tabla dinámica (o crea otra):</p>
+<ul class="simple">
+<li><p><strong>Valores → Total_Sales</strong> como <strong>SUMA</strong> (Ingresos).</p></li>
+<li><p><strong>Valores → Units_Sold</strong> como <strong>SUMA</strong> (Volumen).</p></li>
+</ul>
+</li>
+<li><p><strong>Ticket promedio</strong> (dos alternativas):</p>
+<ul class="simple">
+<li><p><strong>Fácil (tabla dinámica):</strong> agrega <strong>Total_Sales</strong> como <strong>SUMA</strong> y <strong>Units_Sold</strong> como <strong>SUMA</strong> y crea un <strong>Campo calculado</strong>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TicketProm</span> <span class="pre">=</span> <span class="pre">Total_Sales</span> <span class="pre">/</span> <span class="pre">Units_Sold</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>% del total</strong> (participación): en la Pivot, si tu editor lo permite, usa <strong>Mostrar como → % del total</strong> sobre <strong>Total_Sales</strong></p></li>
+</ol>
+<p><strong>Interpretación:</strong> identifica <strong>segmentos con alto ticket pero bajo volumen</strong> (nicho premium) vs <strong>alto volumen y bajo ticket</strong> (masivo).</p>
+</section>
+<section id="refinando-el-layout-e-interpretando-resultados">
+<h2>4.4 Refinando el layout e interpretando resultados<a class="headerlink" href="#refinando-el-layout-e-interpretando-resultados" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo:</strong> organizar la información para facilitar interpretación y comunicación.
+<strong>Layout sugerido:</strong></p>
+<ul class="simple">
+<li><p><strong>Filas:</strong> Region → Product (jerarquía).</p></li>
+<li><p><strong>Valores:</strong> SUM(Total_Sales), SUM(Units_Sold), Campo calculado <code class="docutils literal notranslate"><span class="pre">TicketProm</span></code>.</p></li>
+<li><p><strong>Totales y subtotales</strong> activos.</p></li>
+<li><p><strong>Formato numérico:</strong> moneda para Total_Sales y TicketProm.</p></li>
+</ul>
+<p><strong>Cuadro de hallazgos (añade un cuadro de texto al lado):</strong></p>
+<ol class="arabic simple">
+<li><p>Top 3 regiones por ingresos y su % del total.</p></li>
+<li><p>Producto con <strong>mayor ticket</strong> en cada región.</p></li>
+<li><p>Hipótesis: ¿pricing? ¿mix? ¿promociones? ¿disponibilidad?</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="resultados-visuales-y-narrativa">
+<h1>5. Resultados visuales y narrativa<a class="headerlink" href="#resultados-visuales-y-narrativa" title="Link to this heading">#</a></h1>
+<p>Trabajaremos con <strong>Total_Sales</strong>, <strong>Units_Sold</strong>, <strong>TicketProm</strong> y las dimensiones <strong>Date</strong>, <strong>Region</strong>, <strong>Product</strong>, <strong>Salesperson</strong>.</p>
+<p><strong>Teoría:</strong> elige el gráfico según la <strong>tarea</strong> (comparar, seguir tendencia, ver composición). Evita saturación (top-10) y etiquetas innecesarias.</p>
+<section id="el-grafico-correcto-para-cada-analisis">
+<h2>5.1 El gráfico correcto para cada análisis<a class="headerlink" href="#el-grafico-correcto-para-cada-analisis" title="Link to this heading">#</a></h2>
+<p><strong>Configuraciones concretas en Sheets:</strong></p>
+<ul class="simple">
+<li><p><strong>Comparación por categoría (Top productos por ingresos):</strong></p>
+<ol class="arabic simple">
+<li><p>Crea una tabla de apoyo con las mayores ventas por <code class="docutils literal notranslate"><span class="pre">Product</span></code></p></li>
+<li><p><strong>Insertar → Gráfico → Barras</strong>. Eje X: Total_Sales; Eje Y: Product.</p></li>
+</ol>
+</li>
+<li><p><strong>Tendencia temporal (ingresos mensuales):</strong></p>
+<ol class="arabic simple">
+<li><p>Pivot: <strong>Filas → Month</strong>, <strong>Valores → SUM(Total_Sales)</strong>.</p></li>
+<li><p><strong>Insertar → Gráfico → Líneas</strong>.</p></li>
+</ol>
+</li>
+<li><p><strong>Composición (Region dentro del total):</strong></p>
+<ol class="arabic simple">
+<li><p>Pivot: <strong>Filas → Region</strong>, <strong>Valores → SUM(Total_Sales)</strong>.</p></li>
+<li><p><strong>Gráfico → Barras apiladas</strong> (mejor que pastel si &gt;5 categorías).</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="formato-condicional-para-resaltar">
+<h2>5.2  Formato condicional para resaltar<a class="headerlink" href="#formato-condicional-para-resaltar" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo:</strong> destacar insights clave (top-performers, outliers, KPIs).</p>
+<p><strong>Ejemplos prácticos en Sheets:</strong></p>
+<ol class="arabic simple">
+<li><p>En una tabla de <code class="docutils literal notranslate"><span class="pre">Total_Sales</span></code> por Region, aplica <strong>Formato → Formato condicional → Escala de color</strong> (del p10 al p90).</p></li>
+<li><p>Umbral KPI: resalta celdas &gt; objetivo trimestral (por ejemplo, <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">120000</span></code>).</p></li>
+<li><p>Outliers de ticket: en la tabla con <code class="docutils literal notranslate"><span class="pre">TicketProm</span></code>, resalta valores &gt; p90 o &lt; p10 (usa <strong>Percentiles</strong> si tu Sheets lo permite).</p></li>
+<li><p>Añade nota: “Reglas aplicadas y fecha de cálculo”.</p></li>
+</ol>
+<section id="actividad-practica">
+<h3>Actividad práctica:<a class="headerlink" href="#actividad-practica" title="Link to this heading">#</a></h3>
+<p>Actividad en grupos: análisis de ventas con Google Sheets</p>
+<p>A cada grupo se le asigna un reto de negocio.<br />
+En todos los casos deben usar:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">XLOOKUP</span></code></p></li>
+<li><p>Tablas dinámicas (pivot tables)</p></li>
+<li><p>Formato condicional aplicado sobre la tabla dinámica</p></li>
+<li><p>Campos calculados sencillos dentro de la tabla dinámica</p></li>
+</ul>
+<hr>
+<!-- ================== GRUPO 1 ================== -->
+<h3>Grupo 1 – ¿Qué región genera más ingresos netos?</h3>
+<p><b>Objetivo de negocio:</b> Identificar qué región aporta más ventas después de aplicar descuentos.</p>
+<p><b>Tareas:</b></p>
+<ol class="arabic">
+<li><p>Usa <code>XLOOKUP</code> para traer el nombre completo del <code>Salesperson</code> desde la hoja <b>Salespersons</b> al rango de <b>Raw_sales</b>.</p></li>
+<li><p>Crea una tabla dinámica con:</p>
+<ul class="simple">
+<li><p>Filas: <code>Region</code></p></li>
+<li><p>Valores: <b>Suma de</b> <code>Total_Sales</code> y <b>Promedio de</b> <code>Discount_Pct</code>.</p></li>
+</ul>
+</li>
+<li><p>Agrega un campo calculado llamado <b>Net_Sales</b>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=Total_Sales * (1 - Discount_Pct)
+</pre></div>
+</div>
+</li>
+<li><p>Aplica formato condicional en la tabla dinámica para resaltar en verde la región con mayor <b>Net_Sales</b>.</p></li>
+</ol>
+<p>Responde: ¿Qué región genera más ingresos netos y qué rol parecen jugar los descuentos?</p>
+<hr> <!-- ================== GRUPO 2 ================== --> <h3>Grupo 2 – Vendedores y cumplimiento de metas</h3>
+<p><b>Objetivo de negocio:</b> Evaluar qué vendedores están cumpliendo mejor sus objetivos.</p>
+<p><b>Tareas:</b></p>
+<p>Usa <code>XLOOKUP</code> para traer la meta de ventas mensual (<b>Target</b>) desde la hoja <b>Targets</b> usando el nombre de <code>Salesperson</code>.</p>
+<p>Construye una tabla dinámica con:</p>
+<p>Filas: <code>Salesperson</code></p>
+<p>Columnas: <code>Month</code></p>
+<p>Valores: <b>Suma de</b> <code>Total_Sales</code>.</p>
+<p>Agrega un campo calculado llamado <b>Achievement_Rate</b>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>=Total_Sales / Target
+</pre></div>
+</div>
+<p>Aplica formato condicional para marcar en verde los casos donde <b>Achievement_Rate &gt; 1</b>.</p>
+<p>Responde: ¿Qué vendedor(es) supera(n) más consistentemente sus metas a lo largo de los meses?</p>
+<hr> <!-- ================== GRUPO 3 ================== --> <h3>Grupo 3 – Clientes de alto valor </h3>
+<p><b>Objetivo de negocio:</b> Identificar a los clientes más valiosos por frecuencia y monto de compra.</p>
+<p><b>Tareas:</b></p>
+<p>Usa <code>XLOOKUP</code> para traer información adicional de los clientes desde la hoja <b>Customers</b> (por ejemplo, nombre, segmento o ciudad) usando <code>Customer_ID</code>.</p>
+<p>Crea una tabla dinámica con:</p>
+<p>Filas: <code>Customer_ID</code> (y opcionalmente el nombre del cliente)</p>
+<p>Valores:</p>
+<p><b>Conteo de</b> <code>Order_ID</code> (número de compras)</p>
+<p><b>Suma de</b> <code>Total_Sales</code></p>
+<p>Agrega un campo calculado llamado <b>Avg_Order_Value</b>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>=Total_Sales / Order_ID
+</pre></div>
+</div>
+<p>(En caso necesario, pueden usar el conteo de Order_ID como campo auxiliar en la pivot).</p>
+<p>Usa formato condicional para resaltar a los clientes con:</p>
+<ul class="simple">
+<li><p>Ventas totales altas y</p></li>
+<li><p>Alto valor promedio por pedido (Avg_Order_Value).</p></li>
+</ul>
+<p>Responde: ¿Qué clientes considerarías “VIP” y qué estrategia propondrías para retenerlos?</p>
+<hr></section>
+</section>
+<section id="mini-dashboard-de-resumen">
+<h2>5.3 Mini dashboard de resumen<a class="headerlink" href="#mini-dashboard-de-resumen" title="Link to this heading">#</a></h2>
+<p><strong>Estructura:</strong></p>
+<ul class="simple">
+<li><p>Hoja <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> con:</p>
+<ul>
+<li><p><strong>KPI 1 — Ingresos (rango de fechas):</strong><br />
+<code class="docutils literal notranslate"><span class="pre">=SUMIFS('Raw</span> <span class="pre">Data'!G:G,</span> <span class="pre">'Raw</span> <span class="pre">Data'!A:A,</span> <span class="pre">&quot;&gt;=&quot;&amp;$B$1,</span> <span class="pre">'Raw</span> <span class="pre">Data'!A:A,</span> <span class="pre">&quot;&lt;=&quot;&amp;$B$2)</span></code><br />
+(donde <strong>B1</strong> = fecha inicio, <strong>B2</strong> = fecha fin).</p></li>
+<li><p><strong>KPI 2 — Ticket promedio:</strong><br />
+<code class="docutils literal notranslate"><span class="pre">=SUM('Raw</span> <span class="pre">Data'!G:G)/SUM('Raw</span> <span class="pre">Data'!D:D)</span></code></p></li>
+<li><p><strong>Barras Top-10 productos</strong> por ingresos (gráfico vinculado a tabla auxiliar).</p></li>
+<li><p><strong>Línea</strong> de ingresos mensuales (desde la Pivot por <code class="docutils literal notranslate"><span class="pre">Month</span></code>).</p></li>
+<li><p><strong>Tabla dinámica</strong> por Region con SUM(Total_Sales), SUM(Units_Sold), <code class="docutils literal notranslate"><span class="pre">TicketProm</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Segmentadores (Slicers):</strong> <strong>Datos → Segmentador</strong> para <code class="docutils literal notranslate"><span class="pre">Region</span></code> y <code class="docutils literal notranslate"><span class="pre">Salesperson</span></code>.</p></li>
+<li><p><strong>Tema visual:</strong> títulos claros, sin rebasar 3–4 colores, formato moneda/fecha coherente.</p></li>
+</ul>
+</section>
+<section id="narrativa-ejecutiva">
+<h2>5.4  Narrativa ejecutiva<a class="headerlink" href="#narrativa-ejecutiva" title="Link to this heading">#</a></h2>
+<p>En <code class="docutils literal notranslate"><span class="pre">resumen</span></code>, escribe 3 bullets:</p>
+<ol class="arabic simple">
+<li><p><strong>Qué pasó:</strong> p.ej., “West y North concentran 62% de ingresos; enero es el pico mensual”.</p></li>
+<li><p><strong>Por qué:</strong> hipótesis (mix de productos, precios, promociones, vendedores).</p></li>
+<li><p><strong>Qué hacer:</strong> acciones con <strong>responsable y fecha</strong> (reposición, bundles, objetivo de ticket).</p></li>
+</ol>
+</section>
+<section id="tips-y-buenas-practicas">
+<h2>Tips y buenas prácticas<a class="headerlink" href="#tips-y-buenas-practicas" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Nombra tus campos de forma clara; guarda versiones.</p></li>
+<li><p>Prefiere <strong>tablas</strong> (Ctrl/Cmd+T) como origen de datos para rango dinámico.</p></li>
+<li><p>Documenta filtros aplicados (fecha, región) al exportar.</p></li>
+<li><p>En Sheets, usa <strong>Slicers</strong> para filtros visuales en dashboards.</p></li>
+<li><p>Evita sobrecargar gráficos; menos es más.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Sprint2_semana1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Semana 1: Preguntas de Negocio y Preparación de Datos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sp3_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sprint 3: Explorar KPIs con SQL</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Semana 2: PivotTables, Métricas  y Visualizaciones</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analizando-datos-con-pivottables">4. Analizando datos con PivotTables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construyendo-tu-primera-pivottable">Construyendo tu primera PivotTable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-y-orden-dentro-de-la-pivottable">4.2 Filtrado y orden dentro de la PivotTable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-informacion-con-multiples-metricas">4.3 Resumen de información con múltiples métricas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refinando-el-layout-e-interpretando-resultados">4.4 Refinando el layout e interpretando resultados</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-visuales-y-narrativa">5. Resultados visuales y narrativa</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-grafico-correcto-para-cada-analisis">5.1 El gráfico correcto para cada análisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formato-condicional-para-resaltar">5.2  Formato condicional para resaltar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-practica">Actividad práctica:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-dashboard-de-resumen">5.3 Mini dashboard de resumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#narrativa-ejecutiva">5.4  Narrativa ejecutiva</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-y-buenas-practicas">Tips y buenas prácticas</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gina Buvoli
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

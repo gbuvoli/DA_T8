@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semana 1: Preguntas de Negocio y Preparación de Datos &#8212; Bootcamp Classes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Sprint2_semana1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Semana 2: PivotTables, Métricas y Visualizaciones" href="Sprint2_semana2.html" />
+    <link rel="prev" title="Sprint 2: Transformar datos para insights de negocio" href="sp2_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/t10logo.png" class="logo__image only-light" alt="Bootcamp Classes - Home"/>
+    <script>document.write(`<img src="_static/t10logo.png" class="logo__image only-dark" alt="Bootcamp Classes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al mundo de la Analítica de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Sp0_postonboarding.html">Sesión 0 — Introducción y Bienvenida</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sp1_intro.html">Sprint 1: Introducción a tu futura profesión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sp1_teo.html">Sprint 1 - Introducción a tu futura profesión</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sp2_intro.html">Sprint 2: Transformar datos para insights de negocio</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Semana 1: Preguntas de Negocio y Preparación de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sprint2_semana2.html">Semana 2: PivotTables, Métricas  y Visualizaciones</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sp3_intro.html">Sprint 3: Explorar KPIs con SQL</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Sprint3_semana1.html">Sprint 3 : Explorar KPIs con SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sprint3_semana2.html">Sprint 3 – Webinar 9: KPIs financieros con SQL (90 min)</a></li>
+
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSprint2_semana1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Sprint2_semana1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semana 1: Preguntas de Negocio y Preparación de Datos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-de-analiticas-en-un-contexto-de-negocio">Preguntas de analíticas en un contexto de Negocio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hacer-las-preguntas-correctas-para-identificar-necesidades">Hacer las preguntas correctas para identificar necesidades</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-practico-formular-preguntas-analiticas">Ejercicio práctico: Formular preguntas analíticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-absolutas-vs-relativas-kpi-vs-okr-leading-vs-lagging">Métricas: Absolutas vs Relativas, KPI vs OKR, Leading vs Lagging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicadores-leading-vs-lagging">Indicadores Leading vs. Lagging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparacion-y-exploracion-de-dataset">Preparación y Exploración de Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vinculando-datos-entre-hojas">Vinculando Datos entre Hojas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-caso-de-cierre">Mini-Caso de Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aprendimos-hoy">🎯 <strong>¿Qué aprendimos hoy?</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semana-1-preguntas-de-negocio-y-preparacion-de-datos">
+<h1>Semana 1: Preguntas de Negocio y Preparación de Datos<a class="headerlink" href="#semana-1-preguntas-de-negocio-y-preparacion-de-datos" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="objetivos-de-aprendizaje">
+<h2>Objetivos de Aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Traducir escenarios de negocio en <strong>preguntas analíticas claras</strong> y <strong>métricas</strong> medibles.</p></li>
+<li><p>Diferenciar métricas <strong>absolutas</strong> vs <strong>relativas</strong> e identificar <strong>KPI/OKR</strong> y <em>guardrail metrics</em>.</p></li>
+<li><p>Distinguir <strong>leading</strong> vs <strong>lagging indicators</strong> y redactar preguntas enfocadas.</p></li>
+<li><p><strong>Preparar</strong> y <strong>combinar</strong> datasets (XLOOKUP/VLOOKUP), aplicar limpieza categórica (TRIM/PROPER/CLEAN).</p></li>
+<li><p>Resumir datos con <strong>SUMIF/SUMIFS/COUNTIF/AVERAGEIF</strong> y organizar un libro “analysis‑ready”.</p></li>
+<li><p>Apoyarse de un <strong>LLM</strong> para refinar stakeholders, métricas y fórmulas (usándolo con criterio).</p></li>
+</ul>
+<blockquote>
+<div><p>💡Trabajaremos este dataset (<a class="reference external" href="https://docs.google.com/spreadsheets/d/1P6UdUOiQbMnjX1PdUVto5YH1SEW-sHAP/edit?usp=sharing&amp;amp;ouid=107698041790639854307&amp;amp;rtpof=true&amp;amp;sd=true">almacen_ventas.xlsx</a>).</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="agenda">
+<h2>Agenda<a class="headerlink" href="#agenda" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>Introducción al contexto analítico</em></p></li>
+<li><p><em>Preguntas de negocio y métricas</em></p></li>
+<li><p>Break (10 min)</p></li>
+<li><p><em>Preparación y exploración del dataset</em></p></li>
+</ul>
+<ul class="simple">
+<li><p>Q&amp;A y próximos pasos.</p></li>
+</ul>
+</section>
+<section id="preguntas-de-analiticas-en-un-contexto-de-negocio">
+<h2>Preguntas de analíticas en un contexto de Negocio<a class="headerlink" href="#preguntas-de-analiticas-en-un-contexto-de-negocio" title="Link to this heading">#</a></h2>
+<section id="hacer-las-preguntas-correctas-para-identificar-necesidades">
+<h3>Hacer las preguntas correctas para identificar necesidades<a class="headerlink" href="#hacer-las-preguntas-correctas-para-identificar-necesidades" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<div style="background:#e7f3fe;border-left:6px solid #2196f3;padding:10px;">
+  💡 <strong>Objetivo:</strong> Convertir necesidades del negocio en una pregunta analítica <strong>CLARA, MEDIBLE y ACCIONABLE</strong>
+  <br>
+</div>
+<hr class="docutils" />
+<div style="background:#f8f9fa; padding:15px;border-radius:8px;">
+  📝 <strong>Debe responder 4Qs::</strong><br><br>
+<ol class="arabic simple">
+<li><p>¿Qué se quiere lograr?:  Define el <strong>objetivo</strong> (qué se busca).</p></li>
+<li><p>¿Cuanto medir?:  Define el “Exito”, <strong>métricas clave</strong> (KPI/OKR), <strong>“cómo se miden”</strong></p></li>
+<li><p>¿Cuando medir?:  Define el <strong>horizonte temporal</strong> (frecuencia).</p></li>
+<li><p>¿Quién toma la decisión?:  Identifica <strong>stakeholders</strong> (quién decide).</p></li>
+</ol>
+<p>Una vez definas la pregunta, valida:</p>
+</div>
+<div style="background:#e7f3fe;border-left:6px solid #2196f3;padding:10px;">
+  💡 <strong>¿Qué datos necesito para responderla?.</strong> 
+<p>Revisa campos disponibles del dataset y mapea cómo responden preguntas.</p>
+</div>
+<br>
+<div style="background:#d4edda;border-left:6px solid #28a745;padding:10px;">
+<strong>El Resultado debe verse así:</strong><br><br>
+  ✅ “¿Cómo varió la venta neta de Monitores en cada región durante ene-mar 2024 para que inventarios defina el stock?”
+</div></section>
+</section>
+<section id="ejercicio-practico-formular-preguntas-analiticas">
+<h2>Ejercicio práctico: Formular preguntas analíticas<a class="headerlink" href="#ejercicio-practico-formular-preguntas-analiticas" title="Link to this heading">#</a></h2>
+<div style="border-left:6px solid #3b3f3fc5; padding:15px; border-radius:8px;">
+  🧠 <strong>Breakout rooms:</strong><br><br>
+  <p>Para cada mini-escenario, escribe:</p>
+  <ul style="margin-left:20px;">
+    <li> Stakeholder</li>
+    <li>Preguntas 4Q </li>
+    <li>Pregunta clave (1 linea)</li>
+    <li>Datos que necesitarías</li>
+  </ul>
+  <p><strong>Escenarios:</strong></p>
+  <ul style="margin-left:20px; list-style-type: lower-alpha;">
+    <li>“Necesito saber qué producto impulsar en el próximo mes en la región <em>West</em>.”</li>
+    <li>“Quiero entender el desempeño mensual por vendedor.”</li>
+    <li>“¿Qué categoría sostiene el crecimiento del trimestre?”</li>
+    <li>“Queremos evitar que se agoten productos populares. ¿Podemos anticipar la demanda?”</li>
+    <li>“Estamos invirtiendo en redes sociales pero no sabemos si trae conversiones.”</li>
+  </ul>
+</div>
+</section>
+<section id="metricas-absolutas-vs-relativas-kpi-vs-okr-leading-vs-lagging">
+<h2>Métricas: Absolutas vs Relativas, KPI vs OKR, Leading vs Lagging<a class="headerlink" href="#metricas-absolutas-vs-relativas-kpi-vs-okr-leading-vs-lagging" title="Link to this heading">#</a></h2>
+<div style="background:#f0f9ff;border-left:6px solid #0ea5e9;padding:15px;border-radius:8px;">
+  📊 <strong>¿Qué son las métricas?</strong><br><br>
+  Las <strong>métricas</strong> son valores numéricos que reflejan el desempeño de un proceso, producto o área del negocio.  
+  Permiten cuantificar resultados, comparar períodos y orientar decisiones basadas en datos.  
+  <br><br>
+  Ejemplos comunes: ingresos, número de usuarios activos, conversiones, tasa de retención, NPS, tiempo promedio de respuesta.<br><br>
+   📈 <strong>Tipos de métricas</strong><br><br>
+  <ul>
+    <li><strong>Absolutas:</strong> expresan cantidades totales sin referencia comparativa.<br>
+      <em>Ejemplo:</em> total de ventas, número de clientes, sesiones por día.</li><br>
+    <li><strong>Relativas:</strong> expresan una proporción o relación entre métricas.<br>
+      <em>Ejemplo:</em> tasa de conversión, crecimiento %, margen de ganancia, churn rate.</li>
+  </ul>
+<p>❓<strong>Cuáles métricas absolutas y relativas usar en tu día a día?</strong></p>
+</div>
+<div style="background:#fff8e1;border-left:6px solid #fbc02d;padding:15px;border-radius:8px;">
+  🎯 <strong>KPI vs OKR</strong><br><br>
+  <ul>
+    <li><strong>OKR (Objectives & Key Results):</strong> define un <em>objetivo</em> cualitativo y lo acompaña con <em>resultados clave</em> cuantificables.<br>
+      <em>Ejemplo:</em> “Mejorar la retención de usuarios” → aumentar tasa de retención al 85%.</li><br>
+    <li><strong>KPI (Key Performance Indicator):</strong> mide el desempeño continuo de un proceso o resultado clave.  
+      <em>Ejemplo:</em> tasa de conversión semanal, NPS mensual, ocupación promedio.</li><br>
+  </ul>
+  <p><strong>Diferencia clave:</strong> los <em>KPI</em> se mantienen en el tiempo; los <em>OKR</em> cambian según metas estratégicas.</p>
+</div>
+<div style="width:100%; background:#ffffffff;border-left:6px solid #ffffffff;padding:15px;border-radius:8px; text-align:center;">
+<img src="https://www.aihr.com/wp-content/uploads/OKRs-vs-KPIs-Whats-the-Difference.png" width="800">
+</div><div style="background:#fce4ec;border-left:6px solid #d81b60;padding:15px;border-radius:8px;">
+  🛡️ <strong>Guardrail Metrics</strong><br><br>
+  Son <em>métricas de seguridad</em> que garantizan que el crecimiento o los cambios no generen efectos negativos en otras áreas del negocio.<br><br>
+  <strong>Ejemplos:</strong>
+  <ul>
+    <li>Churn rate (tasa de cancelación)</li>
+    <li>NPS (Net Promoter Score)</li>
+    <li>Tiempo de carga o disponibilidad del sitio</li>
+  </ul>
+  <p>Actúan como “barandillas” que evitan daños mientras optimizas otras métricas principales.</p>
+</div>
+<section id="indicadores-leading-vs-lagging">
+<h3>Indicadores Leading vs. Lagging<a class="headerlink" href="#indicadores-leading-vs-lagging" title="Link to this heading">#</a></h3>
+<div style="background:#e3f2fd;border-left:6px solid #1976d2;padding:15px;border-radius:8px;">
+  🔮 <strong>Leading vs. Lagging Indicators</strong><br><br>
+  <ul>
+    <li><strong>Leading (anticipan):</strong> métricas que predicen resultados futuros.<br>
+      <em>Ejemplos:</em> visitas al sitio, leads generados, cotizaciones, unidades vendidas.</li><br>
+    <li><strong>Lagging (confirman):</strong> métricas que confirman resultados ya ocurridos.<br>
+      <em>Ejemplos:</em> ingresos, margen, utilidad, ventas cerradas.</li>
+  </ul>
+  <p>👉 Las métricas <em>leading</em> sirven para actuar antes del resultado; las <em>lagging</em> ayudan a evaluar desempeño pasado.</p>
+<p>❓<strong>Cuáles indicadores Leading y Lagging reconoces en tu día a día?</strong></p>
+</div>
+<a href="https://kahoot.it/challenge/12345678" target="_blank" style="text-decoration: none;">
+  <button style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">
+    🚀 ¡Haz clic aquí para jugar el Kahoot!
+  </button>
+</a>
+<h2 style="color: #2c3e50;">☕ Break de 10 minutos</h2>
+<p style="font-size: 18px;">Estírate, toma agua, respira... ¡y regresa con energía!</p>
+<p><a class="reference external" href="https://www.youtube.com/embed/8thPJbbaKqM?si=BpEVjPRuXFXsT-M2">break</a></p>
+<div style="text-align: center">
+    <img src="https://media.istockphoto.com/id/508347326/photo/happy-coffee-cup.jpg?s=1024x1024&w=is&k=20&c=y24WTonJn3AUxgPUkefJUDCCgl3ogGvRsrsqLr1IS3U=" width="800">
+</div><div style="background:#f8f9fa;border-left:6px solid #6c757d;padding:15px;border-radius:8px;">
+  💻 <strong>Ejercicio Integrado</strong><br><br>
+  <h4>Parte A — Métricas y Cálculos en Excel/Sheets</h4>
+<p><strong>Responde con fórmulas (sin Pivot):</strong></p>
+  <ol style="margin-left:20px;">
+    <li><strong>Total de ventas por producto</strong> → usa <code>SUMIF</code> o <code>SUMIFS</code>.</li>
+    <li><strong>Promedio de ventas por región</strong> → usa <code>AVERAGEIF</code>.</li>
+    <li><strong>Crecimiento % Mes a Mes</strong> de <em>Total_Sales</em>:
+      <ul>
+        <li>Construye una tabla de ventas por <code>Month</code>.</li>
+        <li>Usa la fórmula: <code>(MesActual - MesAnterior) / MesAnterior</code>.</li>
+      </ul>
+      <li><strong> RETO</strong> Encuentra el vendedor con mayor <em>Total_Sales</em> en el último mes</li>
+      <li><strong> RETO</strong> Agrega color y formato condicional para resaltar información clave.
+    </li>
+  </ol>
+  <p>👉 Recuerda usar referencias absolutas (<code>$</code>) cuando copies fórmulas a otras celdas para evitar errores.</p>
+  <p>👉 Deja las fórmulas visibles y nombra los rangos para facilitar la lectura.</p>
+</div>
+</section>
+</section>
+<section id="preparacion-y-exploracion-de-dataset">
+<h2>Preparación y Exploración de Dataset<a class="headerlink" href="#preparacion-y-exploracion-de-dataset" title="Link to this heading">#</a></h2>
+<div style="background:#f0f9ff;border-left:6px solid #666869ff;padding:15px;border-radius:8px;">
+  <h3>Importar y explorar nuevo dataset</h3>
+<p><href><a class="reference external" href="https://docs.google.com/spreadsheets/d/1lVACaFHZKNcHvbFjjeXuWpBgdah82roN/edit?usp=sharing&amp;amp;ouid=107698041790639854307&amp;amp;rtpof=true&amp;amp;sd=true">Abre el dataset</a></p>
+  <p>Abre la hoja <strong>Customers</strong> y revisa los campos principales:</p>
+  <ul>
+    <li><code>Customer_ID</code>: identificador único del cliente.</li>
+    <li><code>Region</code>: zona geográfica asignada.</li>
+    <li><code>Customer_Type</code>: tipo de cliente (<em>Retail</em> o <em>Wholesale</em>).</li>
+    <li><code>Segment</code>: categoría comercial (<em>SMB</em> o <em>Enterprise</em>).</li>
+  </ul>
+</div>
+<div style="background:#f8f9fa;border-left:6px solid #6c757d;padding:15px;border-radius:8px;">
+  💻 <strong>Ejercicio </strong><br><br>
+  <p>Lista 3–4 posibles conexiones entre hojas del dataset:</p>
+  <ul>
+    <li>Por Customer_ID</li>
+    <li>Por Region</li>
+    <li>Por Month</li>
+    <li>Por Product_ID</li>
+  </ul>
+</div>
+</section>
+<section id="vinculando-datos-entre-hojas">
+<h2>Vinculando Datos entre Hojas<a class="headerlink" href="#vinculando-datos-entre-hojas" title="Link to this heading">#</a></h2>
+<div style="background:#e8f5e9;border-left:6px solid #2e7d32;padding:15px;border-radius:8px;">
+  🔗 <strong>Objetivo:</strong><br><br>
+  Aprender a combinar información entre hojas relacionadas del dataset mediante funciones de búsqueda y agregación.
+  <br><br>
+  En el archivo <code>datos_practica_lookups.xlsx</code> encontrarás múltiples hojas interconectadas:
+  <ul>
+    <li><strong>Customers</strong>: información de clientes (ID, Región, Tipo, Segmento).</li>
+    <li><strong>Sales</strong>: detalle de ventas (Customer_ID, Product_ID, Total_Sales).</li>
+    <li><strong>Products</strong>: catálogo con precios y categorías.</li>
+    <li><strong>Targets</strong>: metas de ingresos por <code>Region</code> y <code>Month</code>.</li>
+    <li><strong>FX</strong>: tasa de conversión de USD → COP por <code>Month</code>.</li>
+  </ul>
+</div>
+<div style="background:#f0f9ff;border-left:6px solid #0ea5e9;padding:15px;border-radius:8px;">
+  <h4>🧩 Ejercicio— Funciones de Búsqueda</h4>
+  <p>Abre la hoja <strong>Sales</strong> y completa las columnas vacías creando vínculos con otras hojas:</p>
+  <ol style="margin-left:20px;">
+    <li><strong>Trae el Customer_Type</strong> desde <em>Customers</em> por <code>Customer_ID</code>.<br>
+      <code>=VLOOKUP(E2, Customers!A2:D21, 4, FALSE)</code></li>
+    <li><strong>Trae el Product_Name</strong> desde <em>Products</em> por <code>Product_ID</code>.<br>
+      <code>=XLOOKUP(F2, Products!A2:A7, Products!B2:B7, "No encontrado")</code></li>
+    <li><strong>Agrega la meta de ingresos</strong> desde <em>Targets</em> por <code>Region</code> y <code>Month</code>.<br>
+      <em>Tip:</em> crea una clave auxiliar <code>=C2 & "-" & D2</code> en ambas hojas y busca por esa clave combinada.</li>
+    <li><strong>Convierte las ventas a COP</strong> usando la tasa de cambio de <em>FX</em> por <code>Month</code>.<br>
+      <code>=XLOOKUP(D2, FX!A2:A10, FX!C2:C10) * J2</code></li>
+  </ol>
+  <p>👉 Experimenta cambiando <code>VLOOKUP</code> por <code>XLOOKUP</code> y nota cómo mejora la flexibilidad de las búsquedas.</p>
+</div>
+<div style="background:#fff8e1;border-left:6px solid #fbc02d;padding:15px;border-radius:8px;">
+  <h4>📊 Ejercicio — Agregación Condicional </h4>
+  <p>En una nueva hoja <strong>Analysis</strong>, crea tablas resumen usando funciones condicionales:</p>
+  <ul>
+    <li><code>SUMIFS</code> — Total de ventas por <code>Region</code> y <code>Month</code>.</li>
+    <li><code>AVERAGEIFS</code> — Precio promedio por <code>Product_Name</code> y <code>Month</code>.</li>
+    <li><code>COUNTIFS</code> — Número de pedidos por <code>Salesperson</code> durante Q2-2024.</li>
+  </ul>
+  <p>Usa rangos dinámicos con <code>$</code> y construye las condiciones una por una para evitar errores.</p>
+</div>
+</section>
+<section id="mini-caso-de-cierre">
+<h2>Mini-Caso de Cierre<a class="headerlink" href="#mini-caso-de-cierre" title="Link to this heading">#</a></h2>
+<div style="background:#f0f9ff;border-left:6px solid #0ea5e9;padding:15px;border-radius:8px;">
+  <h4>📈 Escenario</h4>
+  <p><strong>Stakeholder:</strong> CEO</p>
+  <p><strong>Pregunta:</strong> ¿Cómo evolucionaron las ventas de <em>Laptop</em> y <em>Tablet</em> en el último trimestre por región?</p>
+  <p>(El dataset no incluye <em>Smartphone</em>, así que usa <strong>Tablet</strong> como producto sustituto).</p>
+</div>
+<div style="background:#f8f9fa;border-left:6px solid #6c757d;padding:15px;border-radius:8px;">
+  <h4>🧮 Tareas paso a paso</h4>
+  <ol style="margin-left:20px;">
+    <li>
+      <strong>Verifica la columna <code>Month</code>:</strong><br>
+      Asegúrate de tener el formato correcto en la hoja <em>Sales</em>:<br>
+      <code>=TEXT(A2,"mmm-yyyy")</code>
+    </li><br>
+    <li>
+      <strong>Filtra productos:</strong><br>
+      Usa <code>FILTER</code>  para quedarte solo con los productos
+      <em>Laptop</em> y <em>Tablet</em>.
+    </li><br>
+    <li>
+      <strong>Calcula <code>Total_Sales</code> por <code>Month</code>, <code>Region</code> y <code>Product</code>:</strong><br>
+      Si deseas hacerlo con fórmula:<br>
+      <code>=SUMIFS(Sales!J:J, Sales!D:D, A2, Sales!C:C, B2, Sales!F:F, C2)</code><br>
+      (donde A2 = Month, B2 = Region, C2 = Product).<br>
+    </li><br>
+    <li>
+      <strong>Crea el gráfico comparativo:</strong><br>
+      Inserta un gráfico de líneas o columnas agrupadas para visualizar la evolución de ambos productos por región durante el último trimestre (abr-jun 2024).
+    </li><br>
+    <li>
+      <strong>Redacta 2–3 insights:</strong><br>
+      En la hoja <em>Summary</em>, agrega una sección “Insights” donde resumas hallazgos clave.
+      <ul>
+        <li>¿Qué región mostró mayor crecimiento?</li>
+        <li>¿Algún producto tuvo caída o estancamiento?</li>
+        <li>¿Se observa alineación con las metas regionales (<em>Targets</em>)?</li>
+      </ul>
+    </li>
+  </ol>
+</div>
+</section>
+<section id="que-aprendimos-hoy">
+<h2>🎯 <strong>¿Qué aprendimos hoy?</strong><a class="headerlink" href="#que-aprendimos-hoy" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tipos de métricas (absolutas, relativas, guardrail)</p></li>
+<li><p>Indicadores <em>leading</em> vs <em>lagging</em></p></li>
+<li><p>Funciones de búsqueda y agregación en Sheets (VLOOKUP, XLOOKUP, SUMIFS)</p></li>
+<li><p>Interpretación de KPIs y redacción de insights</p></li>
+</ul>
+<div style="background:#f0f9ff; border-left:6px solid #0ea5e9; padding:15px; border-radius:8px;">
+  <h3>🚀 Siguientes Pasos</h3>
+  <ul>
+    <li><strong>Próxima sesión:</strong> sesión práctica de <em>exploración de datos</em> y <em>funciones de agregación condicionales</em>.</li><br>
+    <li><strong>Participación continua:</strong> asiste a <em>Co-Learning</em> y <em>Sprint Focus</em>, y usa los canales de <strong>Discord</strong> para hacer preguntas y compartir hallazgos.</li><br>
+    <li><strong>Recordatorios:</strong> la grabación y los recursos utilizados se comparten al finalizar la sesión.  
+    Si necesitas apoyo adicional, agenda un <strong>1:1</strong> con tu tutor.</li>
+  </ul>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sp2_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sprint 2: Transformar datos para insights de negocio</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Sprint2_semana2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Semana 2: PivotTables, Métricas  y Visualizaciones</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de Aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-de-analiticas-en-un-contexto-de-negocio">Preguntas de analíticas en un contexto de Negocio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hacer-las-preguntas-correctas-para-identificar-necesidades">Hacer las preguntas correctas para identificar necesidades</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-practico-formular-preguntas-analiticas">Ejercicio práctico: Formular preguntas analíticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-absolutas-vs-relativas-kpi-vs-okr-leading-vs-lagging">Métricas: Absolutas vs Relativas, KPI vs OKR, Leading vs Lagging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicadores-leading-vs-lagging">Indicadores Leading vs. Lagging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparacion-y-exploracion-de-dataset">Preparación y Exploración de Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vinculando-datos-entre-hojas">Vinculando Datos entre Hojas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-caso-de-cierre">Mini-Caso de Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aprendimos-hoy">🎯 <strong>¿Qué aprendimos hoy?</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gina Buvoli
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

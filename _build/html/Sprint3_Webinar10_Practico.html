@@ -1,0 +1,1077 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sprint 3 · Webinar 10 — Clase Práctica de SQL (RunSQL) &#8212; Bootcamp Classes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Sprint3_Webinar10_Practico';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/t10logo.png" class="logo__image only-light" alt="Bootcamp Classes - Home"/>
+    <script>document.write(`<img src="_static/t10logo.png" class="logo__image only-dark" alt="Bootcamp Classes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al mundo de la Analítica de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Sp0_postonboarding.html">Sesión 0 — Introducción y Bienvenida</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sp1_intro.html">Sprint 1: Introducción a tu futura profesión</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sp1_teo.html">Sprint 1 - Introducción a tu futura profesión</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sp2_intro.html">Sprint 2: Transformar datos para insights de negocio</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Sprint2_semana1.html">Semana 1: Preguntas de Negocio y Preparación de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sprint2_semana2.html">Semana 2: PivotTables, Métricas  y Visualizaciones</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sp3_intro.html">Sprint 3: Explorar KPIs con SQL</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Sprint3_semana1.html">Sprint 3 : Explorar KPIs con SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sprint3_semana2.html">Sprint 3 – Webinar 9: KPIs financieros con SQL (90 min)</a></li>
+
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSprint3_Webinar10_Practico.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Sprint3_Webinar10_Practico.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sprint 3 · Webinar 10 — Clase Práctica de SQL (RunSQL)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-rapida-runsql-breakout-rooms">0) Configuración rápida RunSQL (Breakout Rooms)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reset-y-creacion-de-tablas-extendido">1) Reset y creación de tablas (extendido)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insercion-de-datos-extendido-para-tendencias">2) Inserción de datos (extendido para tendencias)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculemos-el-revenue-total-y-el-costo-total">2.1) Calculemos el Revenue total y el costo total</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bis-kpis-con-cte-y-case">2bis) KPIs con CTE y CASE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-por-canal-campana-con-daily-tracking">3) ROI por canal/campaña (con daily tracking)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-y-verificacion-de-resultados">4) Validación y verificación de resultados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-total-revenue-por-dos-rutas-deberia-coincidir">4.1 Control total: revenue por dos rutas debería coincidir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sanity-checks">4.2 Sanity checks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salidas-con-forma-de-reporte-orden-formatos">5) Salidas con forma de reporte (orden/formatos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tendencias-con-window-functions">6) Tendencias con window functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revenue-mensual">6.1 Revenue mensual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-vs-mes-anterior-lag">6.2 % cambio vs mes anterior (LAG)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-movil-3-puntos-avg-over-rows-2-preceding">6.3 Media móvil 3 puntos (AVG OVER … ROWS 2 PRECEDING)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-guiados-runsql">7) Ejercicios guiados (RunSQL)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7-1-margen-por-tienda-con-semaforo-case">Ejercicio 7.1 — Margen por tienda con semáforo (CASE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7-2-roi-por-canal-agregado-y-top-canal">Ejercicio 7.2 — ROI por canal (agregado) y top canal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7-3-cambio-mensual-y-deteccion-de-caida">Ejercicio 7.3 — % cambio mensual y detección de caída</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retos-opcional">8) Retos (opcional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siguientes-pasos">Siguientes Pasos</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sprint-3-webinar-10-clase-practica-de-sql-runsql">
+<h1>Sprint 3 · Webinar 10 — Clase Práctica de SQL (RunSQL)<a class="headerlink" href="#sprint-3-webinar-10-clase-practica-de-sql-runsql" title="Link to this heading">#</a></h1>
+<p><strong>Enfoque:</strong> profundización a partir del cuaderno teórico: KPIs financieros, validación de resultados, reporte y tendencias.</p>
+<p><strong>Duración sugerida:</strong> 120–150 min<br />
+<strong>Autor:</strong> Tripleten MT</p>
+<blockquote>
+<div><p>Copia y pega cada bloque SQL en <strong>RunSQL</strong> (dialecto PostgreSQL).</p>
+</div></blockquote>
+<div style="text-align: center">
+    <img src="https://raw.githubusercontent.com/ljpiere/tpdata_python/main/images/w1s1_2.png" width="400">
+</div><section id="objetivos">
+<h2>Objetivos<a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Reforzar KPIs (revenue, cost, gross_profit, margin%) y <strong>ROI</strong>.</p></li>
+<li><p>Aplicar <strong>CTEs</strong>, <strong>CASE</strong>, <strong>subconsultas</strong> y <strong>window functions</strong> (LAG, moving average, rankings).</p></li>
+<li><p>Practicar <strong>validación y verificación</strong> de resultados (control totals, sanity checks).</p></li>
+<li><p>Dar <strong>forma de reporte</strong> a salidas SQL (orden, redondeos, filtros ejecutivos).</p></li>
+<li><p>Analizar <strong>tendencias</strong> (por mes, % cambio, rolling).</p></li>
+</ol>
+</section>
+<section id="agenda">
+<h2>Agenda<a class="headerlink" href="#agenda" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="0">
+<li><p>Configuración rápida RunSQL</p></li>
+<li><p>Reset de esquema y datos extendidos</p></li>
+<li><p>KPIs con CTEs y CASE</p></li>
+<li><p>ROI por canal/campaña</p></li>
+<li><p>Validación y verificación</p></li>
+<li><p>Reportes ejecutivos</p></li>
+<li><p>Tendencias con window functions</p></li>
+<li><p>Ejercicios guiados (+ soluciones)</p></li>
+<li><p>Retos</p></li>
+</ol>
+</section>
+<section id="configuracion-rapida-runsql-breakout-rooms">
+<h2>0) Configuración rápida RunSQL (Breakout Rooms)<a class="headerlink" href="#configuracion-rapida-runsql-breakout-rooms" title="Link to this heading">#</a></h2>
+<p>Vamos a configurar nuestro entorno en runSQL creando las tablas e insertando los datos. Par esto haremos lo siguiente:</p>
+<ol class="arabic simple">
+<li><p>Abre <strong><a class="reference external" href="http://runsql.com">runsql.com</a></strong> y crea un nuevo playground (gratuito).</p></li>
+<li><p>Selecciona <strong>PostgreSQL</strong>.</p></li>
+<li><p>Ejecuta los bloques de la sección 1 en orden.</p></li>
+<li><p>Ejecuta los bloques de la sección 2 en orden.</p></li>
+<li><p>Has un join entre la tabla SALES y PRODUCTS para validar que todo esté funcionando bien.</p></li>
+</ol>
+</section>
+<section id="reset-y-creacion-de-tablas-extendido">
+<h2>1) Reset y creación de tablas (extendido)<a class="headerlink" href="#reset-y-creacion-de-tablas-extendido" title="Link to this heading">#</a></h2>
+<p>Reusaremos el esquema de la sesión anterior y añadiremos una tabla de canales/día para tendencias.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="mf">1.1</span> <span class="n">Reset</span>
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">campaign_daily</span><span class="p">;</span> 
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">marketing_spend</span><span class="p">;</span> 
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">sales</span><span class="p">;</span> 
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">products</span><span class="p">;</span> 
+<span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">stores</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="o">--</span> <span class="mf">1.1</span> <span class="n">Reset</span>
+           <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="mf">1.2</span> <span class="n">stores</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">stores</span> <span class="p">(</span>
+  <span class="n">store_id</span>    <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">store_name</span>  <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">region</span>      <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span>
+<span class="p">);</span>
+
+<span class="o">--</span> <span class="mf">1.3</span> <span class="n">products</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">products</span> <span class="p">(</span>
+  <span class="n">product_id</span>   <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">product_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">category</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">unit_cost</span>    <span class="n">NUMERIC</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">unit_price</span>   <span class="n">NUMERIC</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span>
+<span class="p">);</span>
+
+<span class="o">--</span> <span class="mf">1.4</span> <span class="n">sales</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">sales</span> <span class="p">(</span>
+  <span class="n">sale_id</span>    <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">sale_date</span>  <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">store_id</span>   <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">REFERENCES</span> <span class="n">stores</span><span class="p">(</span><span class="n">store_id</span><span class="p">),</span>
+  <span class="n">product_id</span> <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">REFERENCES</span> <span class="n">products</span><span class="p">(</span><span class="n">product_id</span><span class="p">),</span>
+  <span class="n">units</span>      <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">CHECK</span> <span class="p">(</span><span class="n">units</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="o">--</span> <span class="mf">1.5</span> <span class="n">marketing_spend</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">marketing_spend</span> <span class="p">(</span>
+  <span class="n">campaign_id</span>   <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">campaign_name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">start_date</span>    <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">end_date</span>      <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">channel</span>       <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">spend</span>         <span class="n">NUMERIC</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">CHECK</span> <span class="p">(</span><span class="n">spend</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">),</span>
+  <span class="n">store_id</span>      <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">REFERENCES</span> <span class="n">stores</span><span class="p">(</span><span class="n">store_id</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="o">--</span> <span class="mf">1.6</span> <span class="n">campaign_daily</span> <span class="p">(</span><span class="n">tracking</span> <span class="n">diario</span> <span class="n">por</span> <span class="n">canal</span> <span class="n">para</span> <span class="n">tendencias</span><span class="p">)</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">campaign_daily</span> <span class="p">(</span>
+  <span class="n">cd_id</span>        <span class="n">SERIAL</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+  <span class="n">campaign_id</span>  <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">REFERENCES</span> <span class="n">marketing_spend</span><span class="p">(</span><span class="n">campaign_id</span><span class="p">),</span>
+  <span class="n">day</span>         <span class="n">DATE</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">channel</span>     <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">impressions</span> <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">clicks</span>      <span class="n">INTEGER</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">spend</span>       <span class="n">NUMERIC</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="insercion-de-datos-extendido-para-tendencias">
+<h2>2) Inserción de datos (extendido para tendencias)<a class="headerlink" href="#insercion-de-datos-extendido-para-tendencias" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="mf">2.1</span> <span class="n">stores</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">stores</span> <span class="p">(</span><span class="n">store_id</span><span class="p">,</span> <span class="n">store_name</span><span class="p">,</span> <span class="n">region</span><span class="p">)</span> <span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Cali Norte&#39;</span><span class="p">,</span>  <span class="s1">&#39;West&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Cali Sur&#39;</span><span class="p">,</span>    <span class="s1">&#39;West&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Bogota Centro&#39;</span><span class="p">,</span><span class="s1">&#39;East&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Medellin&#39;</span><span class="p">,</span>    <span class="s1">&#39;North&#39;</span><span class="p">);</span>
+
+<span class="o">--</span> <span class="mf">2.2</span> <span class="n">products</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">products</span> <span class="p">(</span><span class="n">product_id</span><span class="p">,</span> <span class="n">product_name</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">unit_cost</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">)</span> <span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="s1">&#39;Mouse&#39;</span><span class="p">,</span>        <span class="s1">&#39;Accesorios&#39;</span><span class="p">,</span> <span class="mf">12.00</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">102</span><span class="p">,</span> <span class="s1">&#39;Teclado&#39;</span><span class="p">,</span>      <span class="s1">&#39;Accesorios&#39;</span><span class="p">,</span> <span class="mf">18.00</span><span class="p">,</span> <span class="mf">30.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">103</span><span class="p">,</span> <span class="s1">&#39;Headphones&#39;</span><span class="p">,</span>   <span class="s1">&#39;Audio&#39;</span><span class="p">,</span>      <span class="mf">35.00</span><span class="p">,</span> <span class="mf">60.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">104</span><span class="p">,</span> <span class="s1">&#39;Tablet 8&quot;&#39;</span><span class="p">,</span>   <span class="s1">&#39;Tablets&#39;</span><span class="p">,</span>    <span class="mf">80.00</span><span class="p">,</span> <span class="mf">120.00</span><span class="p">);</span>
+
+<span class="o">--</span> <span class="mf">2.3</span> <span class="n">sales</span> <span class="p">(</span><span class="n">Q3</span><span class="o">-</span><span class="mi">2025</span> <span class="n">con</span> <span class="n">más</span> <span class="n">filas</span><span class="p">)</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">sales</span> <span class="p">(</span><span class="n">sale_id</span><span class="p">,</span> <span class="n">sale_date</span><span class="p">,</span> <span class="n">store_id</span><span class="p">,</span> <span class="n">product_id</span><span class="p">,</span> <span class="n">units</span><span class="p">)</span> <span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;2025-07-03&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">20</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;2025-07-07&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">18</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;2025-07-12&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;2025-07-17&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;2025-08-02&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">22</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;2025-08-09&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">12</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;2025-08-16&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">14</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;2025-08-23&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;2025-09-01&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;2025-09-10&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">9</span><span class="p">),(</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;2025-09-18&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">20</span><span class="p">),(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;2025-09-27&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="s1">&#39;2025-07-05&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">8</span><span class="p">),(</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;2025-07-19&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">14</span><span class="p">),(</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;2025-08-12&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;2025-09-13&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">16</span><span class="p">);</span>
+
+<span class="o">--</span> <span class="mf">2.4</span> <span class="n">marketing_spend</span> <span class="p">(</span><span class="n">dos</span> <span class="n">campañas</span> <span class="n">por</span> <span class="n">tienda</span> <span class="n">para</span> <span class="n">solape</span><span class="p">)</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">marketing_spend</span> <span class="p">(</span><span class="n">campaign_id</span><span class="p">,</span> <span class="n">campaign_name</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">spend</span><span class="p">,</span> <span class="n">store_id</span><span class="p">)</span> <span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">201</span><span class="p">,</span><span class="s1">&#39;BackToSchool&#39;</span><span class="p">,</span><span class="s1">&#39;2025-08-01&#39;</span><span class="p">,</span><span class="s1">&#39;2025-08-31&#39;</span><span class="p">,</span><span class="s1">&#39;Ads&#39;</span><span class="p">,</span>   <span class="mf">1200.00</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">202</span><span class="p">,</span><span class="s1">&#39;HeadphonesQ3&#39;</span><span class="p">,</span><span class="s1">&#39;2025-07-01&#39;</span><span class="p">,</span><span class="s1">&#39;2025-09-30&#39;</span><span class="p">,</span><span class="s1">&#39;Social&#39;</span><span class="p">,</span> <span class="mf">800.00</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">203</span><span class="p">,</span><span class="s1">&#39;TabletFlash&#39;</span><span class="p">,</span> <span class="s1">&#39;2025-09-01&#39;</span><span class="p">,</span><span class="s1">&#39;2025-09-15&#39;</span><span class="p">,</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span>  <span class="mf">300.00</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="s1">&#39;Accesorios+&#39;</span><span class="p">,</span> <span class="s1">&#39;2025-07-15&#39;</span><span class="p">,</span><span class="s1">&#39;2025-08-15&#39;</span><span class="p">,</span><span class="s1">&#39;Ads&#39;</span><span class="p">,</span>    <span class="mf">600.00</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">205</span><span class="p">,</span><span class="s1">&#39;Q3_Remarketing&#39;</span><span class="p">,</span><span class="s1">&#39;2025-08-10&#39;</span><span class="p">,</span><span class="s1">&#39;2025-09-25&#39;</span><span class="p">,</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="mf">500.00</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="o">--</span> <span class="mf">2.5</span> <span class="n">campaign_daily</span> <span class="p">(</span><span class="n">tracking</span> <span class="n">simulado</span><span class="p">)</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">campaign_daily</span> <span class="p">(</span><span class="n">campaign_id</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">impressions</span><span class="p">,</span> <span class="n">clicks</span><span class="p">,</span> <span class="n">spend</span><span class="p">)</span> <span class="n">VALUES</span>
+<span class="p">(</span><span class="mi">201</span><span class="p">,</span><span class="s1">&#39;2025-08-05&#39;</span><span class="p">,</span><span class="s1">&#39;Ads&#39;</span><span class="p">,</span>  <span class="mi">5000</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mf">120.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">201</span><span class="p">,</span><span class="s1">&#39;2025-08-12&#39;</span><span class="p">,</span><span class="s1">&#39;Ads&#39;</span><span class="p">,</span>  <span class="mi">5500</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mf">160.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">201</span><span class="p">,</span><span class="s1">&#39;2025-08-19&#39;</span><span class="p">,</span><span class="s1">&#39;Ads&#39;</span><span class="p">,</span>  <span class="mi">5800</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mf">220.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">201</span><span class="p">,</span><span class="s1">&#39;2025-08-26&#39;</span><span class="p">,</span><span class="s1">&#39;Ads&#39;</span><span class="p">,</span>  <span class="mi">6000</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mf">300.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">205</span><span class="p">,</span><span class="s1">&#39;2025-08-15&#39;</span><span class="p">,</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mf">110.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">205</span><span class="p">,</span><span class="s1">&#39;2025-09-05&#39;</span><span class="p">,</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="mi">8200</span><span class="p">,</span> <span class="mi">420</span><span class="p">,</span> <span class="mf">140.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">205</span><span class="p">,</span><span class="s1">&#39;2025-09-20&#39;</span><span class="p">,</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mf">150.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">202</span><span class="p">,</span><span class="s1">&#39;2025-07-20&#39;</span><span class="p">,</span><span class="s1">&#39;Social&#39;</span><span class="p">,</span><span class="mi">7000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mf">200.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">202</span><span class="p">,</span><span class="s1">&#39;2025-08-18&#39;</span><span class="p">,</span><span class="s1">&#39;Social&#39;</span><span class="p">,</span><span class="mi">7500</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mf">220.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">202</span><span class="p">,</span><span class="s1">&#39;2025-09-15&#39;</span><span class="p">,</span><span class="s1">&#39;Social&#39;</span><span class="p">,</span><span class="mi">7800</span><span class="p">,</span> <span class="mi">540</span><span class="p">,</span> <span class="mf">240.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">203</span><span class="p">,</span><span class="s1">&#39;2025-09-03&#39;</span><span class="p">,</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mf">80.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">203</span><span class="p">,</span><span class="s1">&#39;2025-09-10&#39;</span><span class="p">,</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="mi">4200</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mf">90.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">203</span><span class="p">,</span><span class="s1">&#39;2025-09-14&#39;</span><span class="p">,</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="mi">4300</span><span class="p">,</span> <span class="mi">330</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="s1">&#39;2025-07-20&#39;</span><span class="p">,</span><span class="s1">&#39;Ads&#39;</span><span class="p">,</span>   <span class="mi">3000</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mf">90.00</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="s1">&#39;2025-08-05&#39;</span><span class="p">,</span><span class="s1">&#39;Ads&#39;</span><span class="p">,</span>   <span class="mi">3500</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mf">120.00</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculemos-el-revenue-total-y-el-costo-total">
+<h2>2.1) Calculemos el Revenue total y el costo total<a class="headerlink" href="#calculemos-el-revenue-total-y-el-costo-total" title="Link to this heading">#</a></h2>
+<p>Usando lo aprendido en la clase anterior; calculemos la sumatoria del costo total y la sumatoria de las ventas de productos.</p>
+<p><strong>Pasos:</strong></p>
+<ol class="arabic simple">
+<li><p>Une todas las tablas, seleccion todas las columnas.</p></li>
+<li><p>Cambia el <code class="docutils literal notranslate"><span class="pre">*</span></code> del <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> por las columnas que quieras traer.</p></li>
+<li><p>Especifica la columna categorica y las columnas para calcular el revenue total y el costo total.</p></li>
+<li><p>No olvides colocar la columna categorica en la función <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code></p></li>
+<li><p>Puedes complementar tu query usando <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code></p></li>
+<li><p>Revisa los valores obtenidos.</p></li>
+</ol>
+</section>
+<section id="bis-kpis-con-cte-y-case">
+<h2>2bis) KPIs con CTE y CASE<a class="headerlink" href="#bis-kpis-con-cte-y-case" title="Link to this heading">#</a></h2>
+<p>Calcular revenue/cost/gross_profit/margin_pct por categoría y marcar salud del margen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span>
+  <span class="n">p</span><span class="o">.</span><span class="n">category</span><span class="p">,</span>
+  <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span><span class="p">,</span>
+  <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">)</span>  <span class="n">AS</span> <span class="n">cost</span><span class="p">,</span>
+  <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">))</span> <span class="n">AS</span> <span class="n">gross_profit</span><span class="p">,</span>
+  <span class="n">ROUND</span><span class="p">(</span>
+    <span class="mf">100.0</span> <span class="o">*</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">))</span>
+    <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">margin_pct</span><span class="p">,</span>
+  <span class="n">CASE</span>
+    <span class="n">WHEN</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">))</span>
+         <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.35</span> <span class="n">THEN</span> <span class="s1">&#39;Excelente&#39;</span>
+    <span class="n">WHEN</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">))</span>
+         <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.20</span> <span class="n">THEN</span> <span class="s1">&#39;Aceptable&#39;</span>
+    <span class="n">ELSE</span> <span class="s1">&#39;Revisar&#39;</span>
+  <span class="n">END</span> <span class="n">AS</span> <span class="n">margin_health</span>
+<span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span>
+<span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+<span class="n">GROUP</span> <span class="n">BY</span> <span class="n">p</span><span class="o">.</span><span class="n">category</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">margin_pct</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="roi-por-canal-campana-con-daily-tracking">
+<h2>3) ROI por canal/campaña (con daily tracking)<a class="headerlink" href="#roi-por-canal-campana-con-daily-tracking" title="Link to this heading">#</a></h2>
+<p>Atribución simple por ventana + tienda; el gasto usa <code class="docutils literal notranslate"><span class="pre">campaign_daily</span></code> (más granular).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span>
+  <span class="n">ms</span><span class="o">.</span><span class="n">campaign_name</span><span class="p">,</span>
+  <span class="n">st</span><span class="o">.</span><span class="n">store_name</span> <span class="n">AS</span> <span class="n">store</span><span class="p">,</span>
+  <span class="p">(</span><span class="n">ms</span><span class="o">.</span><span class="n">start_date</span> <span class="o">||</span> <span class="s1">&#39; -&gt; &#39;</span> <span class="o">||</span> <span class="n">ms</span><span class="o">.</span><span class="n">end_date</span><span class="p">)</span> <span class="n">AS</span> <span class="n">window</span><span class="p">,</span>
+  <span class="n">COALESCE</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span><span class="p">,</span>
+  <span class="n">COALESCE</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">spend</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="n">AS</span> <span class="n">spend</span><span class="p">,</span>
+  <span class="n">ROUND</span><span class="p">(</span>
+    <span class="mf">100.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">spend</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">spend</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">roi_pct</span>
+<span class="n">FROM</span> <span class="n">marketing_spend</span> <span class="n">ms</span>
+<span class="n">LEFT</span> <span class="n">JOIN</span> <span class="n">stores</span> <span class="n">st</span>
+  <span class="n">ON</span> <span class="n">st</span><span class="o">.</span><span class="n">store_id</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">store_id</span>
+<span class="n">LEFT</span> <span class="n">JOIN</span> <span class="n">sales</span> <span class="n">s</span>
+  <span class="n">ON</span> <span class="n">s</span><span class="o">.</span><span class="n">store_id</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">store_id</span>
+ <span class="n">AND</span> <span class="n">s</span><span class="o">.</span><span class="n">sale_date</span> <span class="n">BETWEEN</span> <span class="n">ms</span><span class="o">.</span><span class="n">start_date</span> <span class="n">AND</span> <span class="n">ms</span><span class="o">.</span><span class="n">end_date</span>
+<span class="n">LEFT</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span>
+  <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+<span class="n">LEFT</span> <span class="n">JOIN</span> <span class="p">(</span>
+  <span class="n">SELECT</span> <span class="n">campaign_id</span><span class="p">,</span> <span class="n">SUM</span><span class="p">(</span><span class="n">spend</span><span class="p">)</span> <span class="n">AS</span> <span class="n">spend</span>
+  <span class="n">FROM</span> <span class="n">campaign_daily</span>
+  <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">campaign_id</span>
+<span class="p">)</span> <span class="n">sd</span>
+  <span class="n">ON</span> <span class="n">sd</span><span class="o">.</span><span class="n">campaign_id</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">campaign_id</span>
+<span class="n">GROUP</span> <span class="n">BY</span>
+  <span class="n">ms</span><span class="o">.</span><span class="n">campaign_name</span><span class="p">,</span> <span class="n">st</span><span class="o">.</span><span class="n">store_name</span><span class="p">,</span> <span class="n">ms</span><span class="o">.</span><span class="n">start_date</span><span class="p">,</span> <span class="n">ms</span><span class="o">.</span><span class="n">end_date</span><span class="p">,</span> <span class="n">sd</span><span class="o">.</span><span class="n">spend</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">roi_pct</span> <span class="n">DESC</span> <span class="n">NULLS</span> <span class="n">LAST</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="validacion-y-verificacion-de-resultados">
+<h2>4) Validación y verificación de resultados<a class="headerlink" href="#validacion-y-verificacion-de-resultados" title="Link to this heading">#</a></h2>
+<section id="control-total-revenue-por-dos-rutas-deberia-coincidir">
+<h3>4.1 Control total: revenue por dos rutas debería coincidir<a class="headerlink" href="#control-total-revenue-por-dos-rutas-deberia-coincidir" title="Link to this heading">#</a></h3>
+<p>Ruta: sumar <code class="docutils literal notranslate"><span class="pre">units*price</span></code> en <code class="docutils literal notranslate"><span class="pre">sales</span></code>×<code class="docutils literal notranslate"><span class="pre">products</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="n">AS</span> <span class="n">total_revenue_A</span>
+<span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sanity-checks">
+<h3>4.2 Sanity checks<a class="headerlink" href="#sanity-checks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code></p></li>
+<li><p>precios/costos positivos</p></li>
+<li><p>fechas dentro de Q3-2025</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> 
+  <span class="n">SUM</span><span class="p">(</span><span class="n">CASE</span> <span class="n">WHEN</span> <span class="n">units</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="n">THEN</span> <span class="mi">1</span> <span class="n">ELSE</span> <span class="mi">0</span> <span class="n">END</span><span class="p">)</span> <span class="n">AS</span> <span class="n">bad_units</span><span class="p">,</span>
+  <span class="n">SUM</span><span class="p">(</span><span class="n">CASE</span> <span class="n">WHEN</span> <span class="n">unit_price</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="n">OR</span> <span class="n">unit_cost</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="n">THEN</span> <span class="mi">1</span> <span class="n">ELSE</span> <span class="mi">0</span> <span class="n">END</span><span class="p">)</span> <span class="n">AS</span> <span class="n">bad_prices</span><span class="p">,</span>
+  <span class="n">SUM</span><span class="p">(</span><span class="n">CASE</span> <span class="n">WHEN</span> <span class="n">sale_date</span> <span class="o">&lt;</span> <span class="s1">&#39;2025-07-01&#39;</span> <span class="n">OR</span> <span class="n">sale_date</span> <span class="o">&gt;</span> <span class="s1">&#39;2025-09-30&#39;</span> <span class="n">THEN</span> <span class="mi">1</span> <span class="n">ELSE</span> <span class="mi">0</span> <span class="n">END</span><span class="p">)</span> <span class="n">AS</span> <span class="n">out_of_range</span>
+<span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="salidas-con-forma-de-reporte-orden-formatos">
+<h2>5) Salidas con forma de reporte (orden/formatos)<a class="headerlink" href="#salidas-con-forma-de-reporte-orden-formatos" title="Link to this heading">#</a></h2>
+<p>Top categorías por margen, 2 decimales, orden descendente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">p</span><span class="o">.</span><span class="n">category</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>  <span class="n">AS</span> <span class="n">cost</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="o">-</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">gross_profit</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="o">-</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">))</span> <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span><span class="mi">0</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">margin_pct</span>
+<span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+<span class="n">GROUP</span> <span class="n">BY</span> <span class="n">p</span><span class="o">.</span><span class="n">category</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">margin_pct</span> <span class="n">DESC</span><span class="p">,</span> <span class="n">revenue</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tendencias-con-window-functions">
+<h2>6) Tendencias con window functions<a class="headerlink" href="#tendencias-con-window-functions" title="Link to this heading">#</a></h2>
+<section id="revenue-mensual">
+<h3>6.1 Revenue mensual<a class="headerlink" href="#revenue-mensual" title="Link to this heading">#</a></h3>
+</section>
+<section id="cambio-vs-mes-anterior-lag">
+<h3>6.2 % cambio vs mes anterior (LAG)<a class="headerlink" href="#cambio-vs-mes-anterior-lag" title="Link to this heading">#</a></h3>
+</section>
+<section id="media-movil-3-puntos-avg-over-rows-2-preceding">
+<h3>6.3 Media móvil 3 puntos (AVG OVER … ROWS 2 PRECEDING)<a class="headerlink" href="#media-movil-3-puntos-avg-over-rows-2-preceding" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="mf">6.1</span> <span class="n">Revenue</span> <span class="n">mensual</span>
+<span class="n">WITH</span> <span class="n">rev</span> <span class="n">AS</span> <span class="p">(</span>
+  <span class="n">SELECT</span> <span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="n">sale_date</span><span class="p">)</span> <span class="n">AS</span> <span class="n">month</span><span class="p">,</span>
+         <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span>
+  <span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+  <span class="n">GROUP</span> <span class="n">BY</span> <span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">SELECT</span> <span class="n">month</span><span class="p">,</span> <span class="n">revenue</span>
+<span class="n">FROM</span> <span class="n">rev</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="mf">6.2</span> <span class="o">%</span> <span class="n">cambio</span> <span class="n">vs</span> <span class="n">mes</span> <span class="n">anterior</span>
+<span class="n">WITH</span> <span class="n">rev</span> <span class="n">AS</span> <span class="p">(</span>
+  <span class="n">SELECT</span> <span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="n">sale_date</span><span class="p">)</span> <span class="n">AS</span> <span class="n">month</span><span class="p">,</span>
+         <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span>
+  <span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+  <span class="n">GROUP</span> <span class="n">BY</span> <span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">SELECT</span> <span class="n">month</span><span class="p">,</span>
+       <span class="n">revenue</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">revenue</span> <span class="o">-</span> <span class="n">LAG</span><span class="p">(</span><span class="n">revenue</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">))</span> <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">LAG</span><span class="p">(</span><span class="n">revenue</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">),</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">pct_change</span>
+<span class="n">FROM</span> <span class="n">rev</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="mf">6.3</span> <span class="n">Media</span> <span class="n">móvil</span> <span class="n">de</span> <span class="mi">3</span> <span class="n">puntos</span>
+<span class="n">WITH</span> <span class="n">daily</span> <span class="n">AS</span> <span class="p">(</span>
+  <span class="n">SELECT</span> <span class="n">sale_date</span><span class="p">::</span><span class="n">date</span> <span class="n">AS</span> <span class="n">day</span><span class="p">,</span>
+         <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span>
+  <span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+  <span class="n">GROUP</span> <span class="n">BY</span> <span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">SELECT</span> <span class="n">day</span><span class="p">,</span>
+       <span class="n">revenue</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="n">AVG</span><span class="p">(</span><span class="n">revenue</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">day</span> <span class="n">ROWS</span> <span class="n">BETWEEN</span> <span class="mi">2</span> <span class="n">PRECEDING</span> <span class="n">AND</span> <span class="n">CURRENT</span> <span class="n">ROW</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">ma3</span>
+<span class="n">FROM</span> <span class="n">daily</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">day</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejercicios-guiados-runsql">
+<h2>7) Ejercicios guiados (RunSQL)<a class="headerlink" href="#ejercicios-guiados-runsql" title="Link to this heading">#</a></h2>
+<p>Resuelve y luego compara con la solución.</p>
+<section id="ejercicio-7-1-margen-por-tienda-con-semaforo-case">
+<h3>Ejercicio 7.1 — Margen por tienda con semáforo (CASE)<a class="headerlink" href="#ejercicio-7-1-margen-por-tienda-con-semaforo-case" title="Link to this heading">#</a></h3>
+<p>Enunciado: calcula revenue, cost, margin_pct por tienda y agrega un semáforo: ‘verde’ ≥ 25%, ‘amarillo’ 15–25%, ‘rojo’ &lt; 15%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Tu</span> <span class="n">consulta</span> <span class="n">aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución propuesta:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">st</span><span class="o">.</span><span class="n">store_name</span><span class="p">,</span>
+       <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span><span class="p">,</span>
+       <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">)</span>  <span class="n">AS</span> <span class="n">cost</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="o">-</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">))</span> <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">margin_pct</span><span class="p">,</span>
+       <span class="n">CASE</span> <span class="n">WHEN</span> <span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="o">-</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">))</span><span class="o">/</span><span class="n">NULLIF</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.25</span> <span class="n">THEN</span> <span class="s1">&#39;verde&#39;</span>
+            <span class="n">WHEN</span> <span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="o">-</span> <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_cost</span><span class="p">))</span><span class="o">/</span><span class="n">NULLIF</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.15</span> <span class="n">THEN</span> <span class="s1">&#39;amarillo&#39;</span>
+            <span class="n">ELSE</span> <span class="s1">&#39;rojo&#39;</span> <span class="n">END</span> <span class="n">AS</span> <span class="n">semaforo</span>
+<span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+<span class="n">JOIN</span> <span class="n">stores</span> <span class="n">st</span> <span class="n">ON</span> <span class="n">st</span><span class="o">.</span><span class="n">store_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">store_id</span>
+<span class="n">GROUP</span> <span class="n">BY</span> <span class="n">st</span><span class="o">.</span><span class="n">store_name</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">margin_pct</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-7-2-roi-por-canal-agregado-y-top-canal">
+<h3>Ejercicio 7.2 — ROI por canal (agregado) y top canal<a class="headerlink" href="#ejercicio-7-2-roi-por-canal-agregado-y-top-canal" title="Link to this heading">#</a></h3>
+<p>Enunciado: agrega spend de <code class="docutils literal notranslate"><span class="pre">campaign_daily</span></code> por canal y calcula revenue atribuido aproximado por canal (usando ventanas de cada campaña). ¿Cuál es el mejor canal por ROI?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Tu</span> <span class="n">consulta</span> <span class="n">aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución propuesta:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span>
+  <span class="n">r</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span>
+  <span class="n">COALESCE</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">revenue</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span><span class="p">,</span>
+  <span class="n">COALESCE</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">spend</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>   <span class="n">AS</span> <span class="n">spend</span><span class="p">,</span>
+  <span class="n">ROUND</span><span class="p">(</span>
+    <span class="mf">100.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">revenue</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">spend</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+    <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">spend</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">roi_pct</span>
+<span class="n">FROM</span> <span class="p">(</span>
+  <span class="n">SELECT</span>
+    <span class="n">ms</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span>
+    <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span>
+  <span class="n">FROM</span> <span class="n">marketing_spend</span> <span class="n">ms</span>
+  <span class="n">LEFT</span> <span class="n">JOIN</span> <span class="n">sales</span> <span class="n">s</span>
+    <span class="n">ON</span> <span class="n">s</span><span class="o">.</span><span class="n">store_id</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">store_id</span>
+   <span class="n">AND</span> <span class="n">s</span><span class="o">.</span><span class="n">sale_date</span> <span class="n">BETWEEN</span> <span class="n">ms</span><span class="o">.</span><span class="n">start_date</span> <span class="n">AND</span> <span class="n">ms</span><span class="o">.</span><span class="n">end_date</span>
+  <span class="n">LEFT</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span>
+    <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+  <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">ms</span><span class="o">.</span><span class="n">channel</span>
+<span class="p">)</span> <span class="n">r</span>
+<span class="n">LEFT</span> <span class="n">JOIN</span> <span class="p">(</span>
+  <span class="n">SELECT</span> <span class="n">channel</span><span class="p">,</span> <span class="n">SUM</span><span class="p">(</span><span class="n">spend</span><span class="p">)</span> <span class="n">AS</span> <span class="n">spend</span>
+  <span class="n">FROM</span> <span class="n">campaign_daily</span>
+  <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">channel</span>
+<span class="p">)</span> <span class="n">s</span>
+<span class="n">USING</span> <span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">roi_pct</span> <span class="n">DESC</span> <span class="n">NULLS</span> <span class="n">LAST</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-7-3-cambio-mensual-y-deteccion-de-caida">
+<h3>Ejercicio 7.3 — % cambio mensual y detección de caída<a class="headerlink" href="#ejercicio-7-3-cambio-mensual-y-deteccion-de-caida" title="Link to this heading">#</a></h3>
+<p>Enunciado: calcula revenue mensual y el % cambio vs mes anterior; marca con CASE cuando la caída sea peor que -15%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Tu</span> <span class="n">consulta</span> <span class="n">aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución propuesta:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">WITH</span> <span class="n">rev</span> <span class="n">AS</span> <span class="p">(</span>
+  <span class="n">SELECT</span> <span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="n">sale_date</span><span class="p">)</span> <span class="n">AS</span> <span class="n">month</span><span class="p">,</span>
+         <span class="n">SUM</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">units</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">unit_price</span><span class="p">)</span> <span class="n">AS</span> <span class="n">revenue</span>
+  <span class="n">FROM</span> <span class="n">sales</span> <span class="n">s</span> <span class="n">JOIN</span> <span class="n">products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">product_id</span>
+  <span class="n">GROUP</span> <span class="n">BY</span> <span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">SELECT</span> <span class="n">month</span><span class="p">,</span> <span class="n">revenue</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">revenue</span> <span class="o">-</span> <span class="n">LAG</span><span class="p">(</span><span class="n">revenue</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">))</span> <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">LAG</span><span class="p">(</span><span class="n">revenue</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">),</span><span class="mi">0</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">pct_change</span><span class="p">,</span>
+       <span class="n">CASE</span> <span class="n">WHEN</span> <span class="p">(</span><span class="n">revenue</span> <span class="o">-</span> <span class="n">LAG</span><span class="p">(</span><span class="n">revenue</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">))</span> <span class="o">/</span> <span class="n">NULLIF</span><span class="p">(</span><span class="n">LAG</span><span class="p">(</span><span class="n">revenue</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.15</span> <span class="n">THEN</span> <span class="s1">&#39;alerta&#39;</span>
+            <span class="n">ELSE</span> <span class="s1">&#39;ok&#39;</span> <span class="n">END</span> <span class="n">AS</span> <span class="n">flag</span>
+<span class="n">FROM</span> <span class="n">rev</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">month</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="retos-opcional">
+<h2>8) Retos (opcional)<a class="headerlink" href="#retos-opcional" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Cohortes por tienda</strong>: primera compra del trimestre y revenue acumulado por tienda (usar MIN(sale_date) OVER PARTITION y SUM OVER).</p></li>
+<li><p><strong>Basket mix simple</strong>: por tienda, top 1 categoría por revenue/costo y % participación.</p></li>
+<li><p><strong>Atribución alternativa</strong>: reparte revenue de ventas en ventanas solapadas proporcionalmente al gasto diario de cada campaña (pista: unir sales con campaign_daily por fecha y tienda; normaliza gasto por día).</p></li>
+</ol>
+</section>
+<section id="cierre">
+<h2>Cierre<a class="headerlink" href="#cierre" title="Link to this heading">#</a></h2>
+<p><strong>Kahoot de repaso (5 min)</strong></p>
+<ul class="simple">
+<li><p>Guarda tus consultas clave en un script comentado.</p></li>
+<li><p>Exporta una tabla final y redacta una recomendación ejecutiva.</p></li>
+<li><p><strong>Tarea:</strong> rehacer los ejercicios usando tus propias tablas reales si existen.</p></li>
+</ul>
+</section>
+<section id="siguientes-pasos">
+<h2>Siguientes Pasos<a class="headerlink" href="#siguientes-pasos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Próxima sesión:</strong> Iniciaremos con el sprint número 4.</p></li>
+<li><p><strong>Participación continua:</strong> asistir a Co-Learning y a Sprint Focus, y usar los canales de Discord para hacer preguntas.</p></li>
+<li><p><strong>Recordatorios:</strong> la grabación y recursos utilizados, se comparten al finalizar la sesión; en caso de necesitar apoyo adicional, agenda un 1:1.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Generado:</strong> 2025-10-20 22:24 · Listo para RunSQL (PostgreSQL).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-rapida-runsql-breakout-rooms">0) Configuración rápida RunSQL (Breakout Rooms)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reset-y-creacion-de-tablas-extendido">1) Reset y creación de tablas (extendido)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insercion-de-datos-extendido-para-tendencias">2) Inserción de datos (extendido para tendencias)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculemos-el-revenue-total-y-el-costo-total">2.1) Calculemos el Revenue total y el costo total</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bis-kpis-con-cte-y-case">2bis) KPIs con CTE y CASE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-por-canal-campana-con-daily-tracking">3) ROI por canal/campaña (con daily tracking)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-y-verificacion-de-resultados">4) Validación y verificación de resultados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-total-revenue-por-dos-rutas-deberia-coincidir">4.1 Control total: revenue por dos rutas debería coincidir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sanity-checks">4.2 Sanity checks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salidas-con-forma-de-reporte-orden-formatos">5) Salidas con forma de reporte (orden/formatos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tendencias-con-window-functions">6) Tendencias con window functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revenue-mensual">6.1 Revenue mensual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-vs-mes-anterior-lag">6.2 % cambio vs mes anterior (LAG)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-movil-3-puntos-avg-over-rows-2-preceding">6.3 Media móvil 3 puntos (AVG OVER … ROWS 2 PRECEDING)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-guiados-runsql">7) Ejercicios guiados (RunSQL)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7-1-margen-por-tienda-con-semaforo-case">Ejercicio 7.1 — Margen por tienda con semáforo (CASE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7-2-roi-por-canal-agregado-y-top-canal">Ejercicio 7.2 — ROI por canal (agregado) y top canal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7-3-cambio-mensual-y-deteccion-de-caida">Ejercicio 7.3 — % cambio mensual y detección de caída</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retos-opcional">8) Retos (opcional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siguientes-pasos">Siguientes Pasos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gina Buvoli
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

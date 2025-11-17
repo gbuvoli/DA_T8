@@ -1,0 +1,212 @@
+Traceback (most recent call last):
+  File "C:\Users\fredy\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\fredy\anaconda3\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredy\anaconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredy\anaconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\fredy\anaconda3\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\fredy\anaconda3\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\fredy\anaconda3\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+query = '''
+-- Crearemos una tabla temporal SALES ya que la BD no la tiene
+-- Ignorá el WITH, lo veremos el siguiente sprint
+WITH sales (book_id, sale_date, revenue, cost) AS (
+  VALUES
+    (1, DATE '2025-07-10', 120.456,  70.123),
+    (1, DATE '2025-08-15', 200.234, 110.307),
+    (2, DATE '2025-07-25', 180.214,  95.560),
+    (3, DATE '2025-09-05', 160.678,  85.300),
+    (2, DATE '2025-09-14', 210.345, 120.650),
+    (1, DATE '2025-09-20', 140.456,  80.879)
+)
+SELECT
+  p.publisher AS category,
+  ROUND(SUM(s.revenue), 2) AS total_revenue,
+  ROUND(SUM(s.cost),    2) AS total_cost
+FROM sales s
+LEFT JOIN books b ON b.book_id = s.book_id
+LEFT JOIN publishers p ON p.publisher_id = b.publisher_id
+WHERE s.sale_date >= date_trunc('quarter', CURRENT_DATE) - INTERVAL '1 quarter'
+  AND s.sale_date  <  date_trunc('quarter', CURRENT_DATE)
+GROUP BY p.publisher
+ORDER BY total_revenue DESC;
+
+'''
+sql(query)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mInvalidDatetimeFormat[0m                     Traceback (most recent call last)
+File [1;32m~\anaconda3\Lib\site-packages\sqlalchemy\engine\base.py:1967[0m, in [0;36mConnection._exec_single_context[1;34m(self, dialect, context, statement, parameters)[0m
+[0;32m   1966[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m evt_handled:
+[1;32m-> 1967[0m         [38;5;28mself[39m[38;5;241m.[39mdialect[38;5;241m.[39mdo_execute(
+[0;32m   1968[0m             cursor, str_statement, effective_parameters, context
+[0;32m   1969[0m         )
+[0;32m   1971[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_has_events [38;5;129;01mor[39;00m [38;5;28mself[39m[38;5;241m.[39mengine[38;5;241m.[39m_has_events:
+
+File [1;32m~\anaconda3\Lib\site-packages\sqlalchemy\engine\default.py:941[0m, in [0;36mDefaultDialect.do_execute[1;34m(self, cursor, statement, parameters, context)[0m
+[0;32m    940[0m [38;5;28;01mdef[39;00m [38;5;21mdo_execute[39m([38;5;28mself[39m, cursor, statement, parameters, context[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m--> 941[0m     cursor[38;5;241m.[39mexecute(statement, parameters)
+
+[1;31mInvalidDatetimeFormat[0m: invalid input syntax for type interval: "1 quarter"
+LINE 20: ...>= date_trunc('quarter', CURRENT_DATE) - INTERVAL '1 quarter...
+                                                              ^
+
+
+The above exception was the direct cause of the following exception:
+
+[1;31mDataError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[3], line 26[0m
+[0;32m      1[0m query [38;5;241m=[39m [38;5;124m'''[39m
+[0;32m      2[0m [38;5;124m-- Crearemos una tabla temporal SALES ya que la BD no la tiene[39m
+[0;32m      3[0m [38;5;124m-- Ignorá el WITH, lo veremos el siguiente sprint[39m
+[1;32m   (...)[0m
+[0;32m     24[0m 
+[0;32m     25[0m [38;5;124m'''[39m
+[1;32m---> 26[0m sql(query)
+
+Cell [1;32mIn[2], line 3[0m, in [0;36msql[1;34m(query)[0m
+[0;32m      2[0m [38;5;28;01mdef[39;00m [38;5;21msql[39m(query: [38;5;28mstr[39m):
+[1;32m----> 3[0m     [38;5;28;01mreturn[39;00m pd[38;5;241m.[39mread_sql(query, con[38;5;241m=[39mengine)
+
+File [1;32m~\anaconda3\Lib\site-packages\pandas\io\sql.py:734[0m, in [0;36mread_sql[1;34m(sql, con, index_col, coerce_float, params, parse_dates, columns, chunksize, dtype_backend, dtype)[0m
+[0;32m    724[0m     [38;5;28;01mreturn[39;00m pandas_sql[38;5;241m.[39mread_table(
+[0;32m    725[0m         sql,
+[0;32m    726[0m         index_col[38;5;241m=[39mindex_col,
+[1;32m   (...)[0m
+[0;32m    731[0m         dtype_backend[38;5;241m=[39mdtype_backend,
+[0;32m    732[0m     )
+[0;32m    733[0m [38;5;28;01melse[39;00m:
+[1;32m--> 734[0m     [38;5;28;01mreturn[39;00m pandas_sql[38;5;241m.[39mread_query(
+[0;32m    735[0m         sql,
+[0;32m    736[0m         index_col[38;5;241m=[39mindex_col,
+[0;32m    737[0m         params[38;5;241m=[39mparams,
+[0;32m    738[0m         coerce_float[38;5;241m=[39mcoerce_float,
+[0;32m    739[0m         parse_dates[38;5;241m=[39mparse_dates,
+[0;32m    740[0m         chunksize[38;5;241m=[39mchunksize,
+[0;32m    741[0m         dtype_backend[38;5;241m=[39mdtype_backend,
+[0;32m    742[0m         dtype[38;5;241m=[39mdtype,
+[0;32m    743[0m     )
+
+File [1;32m~\anaconda3\Lib\site-packages\pandas\io\sql.py:1836[0m, in [0;36mSQLDatabase.read_query[1;34m(self, sql, index_col, coerce_float, parse_dates, params, chunksize, dtype, dtype_backend)[0m
+[0;32m   1779[0m [38;5;28;01mdef[39;00m [38;5;21mread_query[39m(
+[0;32m   1780[0m     [38;5;28mself[39m,
+[0;32m   1781[0m     sql: [38;5;28mstr[39m,
+[1;32m   (...)[0m
+[0;32m   1788[0m     dtype_backend: DtypeBackend [38;5;241m|[39m Literal[[38;5;124m"[39m[38;5;124mnumpy[39m[38;5;124m"[39m] [38;5;241m=[39m [38;5;124m"[39m[38;5;124mnumpy[39m[38;5;124m"[39m,
+[0;32m   1789[0m ) [38;5;241m-[39m[38;5;241m>[39m DataFrame [38;5;241m|[39m Iterator[DataFrame]:
+[0;32m   1790[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[0;32m   1791[0m [38;5;124;03m    Read SQL query into a DataFrame.[39;00m
+[0;32m   1792[0m 
+[1;32m   (...)[0m
+[0;32m   1834[0m 
+[0;32m   1835[0m [38;5;124;03m    """[39;00m
+[1;32m-> 1836[0m     result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mexecute(sql, params)
+[0;32m   1837[0m     columns [38;5;241m=[39m result[38;5;241m.[39mkeys()
+[0;32m   1839[0m     [38;5;28;01mif[39;00m chunksize [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [1;32m~\anaconda3\Lib\site-packages\pandas\io\sql.py:1659[0m, in [0;36mSQLDatabase.execute[1;34m(self, sql, params)[0m
+[0;32m   1657[0m args [38;5;241m=[39m [] [38;5;28;01mif[39;00m params [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [params]
+[0;32m   1658[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(sql, [38;5;28mstr[39m):
+[1;32m-> 1659[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mcon[38;5;241m.[39mexec_driver_sql(sql, [38;5;241m*[39margs)
+[0;32m   1660[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mcon[38;5;241m.[39mexecute(sql, [38;5;241m*[39margs)
+
+File [1;32m~\anaconda3\Lib\site-packages\sqlalchemy\engine\base.py:1779[0m, in [0;36mConnection.exec_driver_sql[1;34m(self, statement, parameters, execution_options)[0m
+[0;32m   1774[0m execution_options [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_execution_options[38;5;241m.[39mmerge_with(
+[0;32m   1775[0m     execution_options
+[0;32m   1776[0m )
+[0;32m   1778[0m dialect [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mdialect
+[1;32m-> 1779[0m ret [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_execute_context(
+[0;32m   1780[0m     dialect,
+[0;32m   1781[0m     dialect[38;5;241m.[39mexecution_ctx_cls[38;5;241m.[39m_init_statement,
+[0;32m   1782[0m     statement,
+[0;32m   1783[0m     [38;5;28;01mNone[39;00m,
+[0;32m   1784[0m     execution_options,
+[0;32m   1785[0m     statement,
+[0;32m   1786[0m     distilled_parameters,
+[0;32m   1787[0m )
+[0;32m   1789[0m [38;5;28;01mreturn[39;00m ret
+
+File [1;32m~\anaconda3\Lib\site-packages\sqlalchemy\engine\base.py:1846[0m, in [0;36mConnection._execute_context[1;34m(self, dialect, constructor, statement, parameters, execution_options, *args, **kw)[0m
+[0;32m   1844[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_exec_insertmany_context(dialect, context)
+[0;32m   1845[0m [38;5;28;01melse[39;00m:
+[1;32m-> 1846[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_exec_single_context(
+[0;32m   1847[0m         dialect, context, statement, parameters
+[0;32m   1848[0m     )
+
+File [1;32m~\anaconda3\Lib\site-packages\sqlalchemy\engine\base.py:1986[0m, in [0;36mConnection._exec_single_context[1;34m(self, dialect, context, statement, parameters)[0m
+[0;32m   1983[0m     result [38;5;241m=[39m context[38;5;241m.[39m_setup_result_proxy()
+[0;32m   1985[0m [38;5;28;01mexcept[39;00m [38;5;167;01mBaseException[39;00m [38;5;28;01mas[39;00m e:
+[1;32m-> 1986[0m     [38;5;28mself[39m[38;5;241m.[39m_handle_dbapi_exception(
+[0;32m   1987[0m         e, str_statement, effective_parameters, cursor, context
+[0;32m   1988[0m     )
+[0;32m   1990[0m [38;5;28;01mreturn[39;00m result
+
+File [1;32m~\anaconda3\Lib\site-packages\sqlalchemy\engine\base.py:2355[0m, in [0;36mConnection._handle_dbapi_exception[1;34m(self, e, statement, parameters, cursor, context, is_sub_exec)[0m
+[0;32m   2353[0m [38;5;28;01melif[39;00m should_wrap:
+[0;32m   2354[0m     [38;5;28;01massert[39;00m sqlalchemy_exception [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+[1;32m-> 2355[0m     [38;5;28;01mraise[39;00m sqlalchemy_exception[38;5;241m.[39mwith_traceback(exc_info[[38;5;241m2[39m]) [38;5;28;01mfrom[39;00m [38;5;21;01me[39;00m
+[0;32m   2356[0m [38;5;28;01melse[39;00m:
+[0;32m   2357[0m     [38;5;28;01massert[39;00m exc_info[[38;5;241m1[39m] [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+
+File [1;32m~\anaconda3\Lib\site-packages\sqlalchemy\engine\base.py:1967[0m, in [0;36mConnection._exec_single_context[1;34m(self, dialect, context, statement, parameters)[0m
+[0;32m   1965[0m                 [38;5;28;01mbreak[39;00m
+[0;32m   1966[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m evt_handled:
+[1;32m-> 1967[0m         [38;5;28mself[39m[38;5;241m.[39mdialect[38;5;241m.[39mdo_execute(
+[0;32m   1968[0m             cursor, str_statement, effective_parameters, context
+[0;32m   1969[0m         )
+[0;32m   1971[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_has_events [38;5;129;01mor[39;00m [38;5;28mself[39m[38;5;241m.[39mengine[38;5;241m.[39m_has_events:
+[0;32m   1972[0m     [38;5;28mself[39m[38;5;241m.[39mdispatch[38;5;241m.[39mafter_cursor_execute(
+[0;32m   1973[0m         [38;5;28mself[39m,
+[0;32m   1974[0m         cursor,
+[1;32m   (...)[0m
+[0;32m   1978[0m         context[38;5;241m.[39mexecutemany,
+[0;32m   1979[0m     )
+
+File [1;32m~\anaconda3\Lib\site-packages\sqlalchemy\engine\default.py:941[0m, in [0;36mDefaultDialect.do_execute[1;34m(self, cursor, statement, parameters, context)[0m
+[0;32m    940[0m [38;5;28;01mdef[39;00m [38;5;21mdo_execute[39m([38;5;28mself[39m, cursor, statement, parameters, context[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m--> 941[0m     cursor[38;5;241m.[39mexecute(statement, parameters)
+
+[1;31mDataError[0m: (psycopg2.errors.InvalidDatetimeFormat) invalid input syntax for type interval: "1 quarter"
+LINE 20: ...>= date_trunc('quarter', CURRENT_DATE) - INTERVAL '1 quarter...
+                                                              ^
+
+[SQL: 
+-- Crearemos una tabla temporal SALES ya que la BD no la tiene
+-- Ignorá el WITH, lo veremos el siguiente sprint
+WITH sales (book_id, sale_date, revenue, cost) AS (
+  VALUES
+    (1, DATE '2025-07-10', 120.456,  70.123),
+    (1, DATE '2025-08-15', 200.234, 110.307),
+    (2, DATE '2025-07-25', 180.214,  95.560),
+    (3, DATE '2025-09-05', 160.678,  85.300),
+    (2, DATE '2025-09-14', 210.345, 120.650),
+    (1, DATE '2025-09-20', 140.456,  80.879)
+)
+SELECT
+  p.publisher AS category,
+  ROUND(SUM(s.revenue), 2) AS total_revenue,
+  ROUND(SUM(s.cost),    2) AS total_cost
+FROM sales s
+LEFT JOIN books b ON b.book_id = s.book_id
+LEFT JOIN publishers p ON p.publisher_id = b.publisher_id
+WHERE s.sale_date >= date_trunc('quarter', CURRENT_DATE) - INTERVAL '1 quarter'
+  AND s.sale_date  <  date_trunc('quarter', CURRENT_DATE)
+GROUP BY p.publisher
+ORDER BY total_revenue DESC;
+
+]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
