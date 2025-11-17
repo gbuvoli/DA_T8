@@ -15,8 +15,6 @@ chapters:
       
   - file: sp3_intro
     sections:
-      - file: ssprint3_semana1
-      - file: Sprint3_semana2
+      - file: Sprint3_semana1
+      #- file: Sprint3_semana2
     
-
-
