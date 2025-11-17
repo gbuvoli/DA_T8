@@ -9,6 +9,9 @@ logo: images/t10logo.png
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+  show_input: false
+  hide_code: true
+
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -30,3 +33,5 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  use_togglebutton: true
+  extra_navbar: ""
