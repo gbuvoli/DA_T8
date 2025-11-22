@@ -18,6 +18,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install "jupyter-book==1.*"  # fija versión estable
+          pip install sqlalchemy pandas  # Librerías adicionales que uses en los notebooks
           # Extensiones comunes, opcional:
           # pip install myst-parser sphinx-external-toc sphinx-copybutton
 
