@@ -24,4 +24,5 @@ chapters:
   - file: sp5_intro
     sections:
       - file: sprint5_semana1
+      - file: sprint5_semana1b
     
