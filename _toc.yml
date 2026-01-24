@@ -26,4 +26,17 @@ chapters:
       - file: sprint5_semana1
       - file: sprint5_semana1b
       - file: sprint5_semana2
+  - file: sp6_intro
+  - file: sp7_intro
+    sections:
+      - file: sprint7_semana1
+      - file: sprint7_semana2
+  - file: sp8_intro
+  - file: sp9_intro
+  - file: sp10_intro
+  - file: sp11_intro
+  - file: sp12_intro
+
+
+  
     
