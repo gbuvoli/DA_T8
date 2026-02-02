@@ -30,7 +30,7 @@ chapters:
   - file: sp7_intro
     sections:
       - file: Sprint7_semana1
-#      - file: Sprint7_semana2
+      - file: Sprint7_semana2
   - file: sp8_intro
   - file: sp9_intro
   - file: sp10_intro
