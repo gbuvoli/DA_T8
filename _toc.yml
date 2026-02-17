@@ -34,7 +34,7 @@ chapters:
   - file: sp8_intro
     sections:
       - file: Sprint8_semana1
-#      - file: Sprint8_semana2
+      - file: Sprint8_semana2
   - file: sp9_intro
   - file: sp10_intro
   - file: sp11_intro
