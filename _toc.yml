@@ -39,8 +39,9 @@ chapters:
     sections:
       - file: Sprint9_semana1
       - file: Sprint9_semana2
+
   - file: sp10_intro
-      sections:
+    sections:
         - file: Sprint10_semana1
 
   - file: sp11_intro
